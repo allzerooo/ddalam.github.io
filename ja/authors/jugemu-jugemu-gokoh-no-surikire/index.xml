@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jugemu Jugemu Gokoh no Surikire on A Hugo theme</title>
+    <link>https://example.org/ja/authors/jugemu-jugemu-gokoh-no-surikire/</link>
+    <description>Recent content in Jugemu Jugemu Gokoh no Surikire on A Hugo theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Oct 2018 05:12:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.org/ja/authors/jugemu-jugemu-gokoh-no-surikire/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最初のページ</title>
+      <link>https://example.org/ja/posts/2006.01/first-page/</link>
+      <pubDate>Thu, 04 Oct 2018 05:12:12 +0000</pubDate>
+      
+      <guid>https://example.org/ja/posts/2006.01/first-page/</guid>
+      <description>私の最初のポスト そのころわたくしは、モリーオ市の博物局に勤めて居りました。 十八等官でしたから役所のなかでも、ずうっと下の方でしたし俸給ほうき</description>
+    </item>
+    
+  </channel>
+</rss>

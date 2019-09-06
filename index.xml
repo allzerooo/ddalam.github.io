@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Hugo theme</title>
+    <link>https://example.org/</link>
+    <description>Recent content on A Hugo theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Oct 2018 05:12:12 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Second Page</title>
+      <link>https://example.org/posts/2006.01/second-page/</link>
+      <pubDate>Fri, 05 Oct 2018 05:12:12 +0000</pubDate>
+      
+      <guid>https://example.org/posts/2006.01/second-page/</guid>
+      <description> My second post   The pretty cat photo from here.
+   col1 col2 col3     val1-1 val2-1 val3-1   val1-2 val2-2 long text val3-2   val1-3 val2-3 val3-3   val1-4 val2-4 val3-4    </description>
+    </item>
+    
+    <item>
+      <title>First Page</title>
+      <link>https://example.org/posts/2006.01/first-page/</link>
+      <pubDate>Thu, 04 Oct 2018 05:12:12 +0000</pubDate>
+      
+      <guid>https://example.org/posts/2006.01/first-page/</guid>
+      <description>My first post Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.org/about/</link>
+      <pubDate>Thu, 03 May 2018 06:39:45 +0900</pubDate>
+      
+      <guid>https://example.org/about/</guid>
+      <description>&lt;p&gt;Admin: &lt;strong&gt;John Doe&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;🍕 🍺&lt;/p&gt;
+
+&lt;p&gt;website: &lt;a href=&#34;https://github.com/mazgi/hugo-theme-techlog-simple&#34;&gt;hugo-theme-techlog-simple&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://example.org/profiles/john/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/profiles/john/</guid>
+      <description>Hello. My name is John.
+ My website My SNS page  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://example.org/profiles/smith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/profiles/smith/</guid>
+      <description>Hi! I&amp;rsquo;m Smith
+ website website 2  </description>
+    </item>
+    
+  </channel>
+</rss>
