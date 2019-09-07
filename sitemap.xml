@@ -23,17 +23,17 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/java_web_programming/</loc>
-    <lastmod>2019-09-06T13:20:38+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chunbong.github.io/tags/lombok/</loc>
     <lastmod>2019-09-06T13:20:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/java_web_programming/lombok-error-solving/</loc>
+    <loc>https://chunbong.github.io/post/java_web_programming/lombok-error-solving/</loc>
+    <lastmod>2019-09-06T13:20:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/post/</loc>
     <lastmod>2019-09-06T13:20:38+09:00</lastmod>
   </url>
   
@@ -43,98 +43,23 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/tags/basic-elements/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <loc>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-02/</loc>
+    <lastmod>2019-08-29T21:11:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/post/basic-elements/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <loc>https://chunbong.github.io/tags/springboot/</loc>
+    <lastmod>2019-08-29T21:11:52+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/tags/css/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <loc>https://chunbong.github.io/tags/spring-boot/</loc>
+    <lastmod>2019-08-29T01:10:22+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/categories/development/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/html/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/</loc>
-    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/1/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/2/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/3/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chunbong.github.io/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-01/</loc>
+    <lastmod>2019-08-29T01:10:22+09:00</lastmod>
   </url>
   
 </urlset>

@@ -47,7 +47,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-family: "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif;
 	font-size: 14px;
 	/* font-size: 1.2em; */
 	line-height: 1.6;
@@ -112,7 +112,7 @@ body {
 }
 
 .post__content p {
-	font-size: 1.7em;
+	font-size: 23px;
 }
 
 .post__content h1 {
@@ -176,13 +176,13 @@ h6 {
 }
 
 h1 {
-	font-size: 32px;
-	font-size: 2.5rem;
+	font-size: 28px;
+	font-size: 2.5em;
 }
 
 h2 {
 	font-size: 24px;
-	font-size: 2rem;
+	font-size: 2em;
 }
 
 h3 {
@@ -221,7 +221,7 @@ hr {
 
 p {
 	margin: 0 0 20px;
-	margin: 0 0 1.25rem;
+	margin: 0 0 1rem;
 }
 
 b,
@@ -267,6 +267,7 @@ figcaption h4 {
 	color: inherit;
 }
 
+
 pre,
 code,
 kbd,
@@ -279,11 +280,13 @@ pre,
 code {
 	background-color: #f5f5f5;
 	border: 1px solid #ebebeb;
+	font-size: 0.9em;
 }
 
 code {
 	padding: 0 5px;
 	color: #c33;
+	font-size: 19px;
 }
 
 pre {
@@ -320,7 +323,7 @@ blockquote {
 }
 
 blockquote p {
-	color: #57606f;
+	color: #666666;
 }
 
 blockquote p:last-child {
@@ -374,7 +377,7 @@ dd {
 
 dt {
 	font-weight: bold;
-	list-style-type: square;
+	list-style-type: circle;
 }
 
 dd {
@@ -384,6 +387,11 @@ dd {
 
 select {
 	max-width: 100%;
+}
+
+.highlight {
+	font-size: 22px;
+	background-color: #2B2B2B;
 }
 
 .warning {
@@ -700,7 +708,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 }
 
 .content ul {
-	list-style: square;
+	list-style: disc;
 }
 
 .content ol {
@@ -721,7 +729,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .content li {
 	margin-bottom: 5px;
-	font-size: 1.7em;
+	font-size: 23px;
 }
 
 .post__footer {
@@ -1061,7 +1069,7 @@ textarea {
 
 .widget__title {
 	position: relative;
-	font-family: 'Apple SD Gothic Neo';
+	font-family: "Apple SD Gothic Neo", "Nanum Barun Gothic", "Nanum Gothic", Verdana, Arial, "Malgun Gothic", Dotum, sans-serif;
 	font-size: 16px;
 	font-size: 1.5rem;
 	color: #EB3B59;
