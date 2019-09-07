@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java Web Programming on Chunbong</title>
+    <link>https://chunbong.github.io/categories/java-web-programming/</link>
+    <description>Recent content in Java Web Programming on Chunbong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Sep 2019 13:20:38 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/categories/java-web-programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lombok cannot find sybol 오류 해결 방법</title>
+      <link>https://chunbong.github.io/java_web_programming/lombok-error-solving/</link>
+      <pubDate>Fri, 06 Sep 2019 13:20:38 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/java_web_programming/lombok-error-solving/</guid>
+      <description>SearchParam.java에 Lombok annotation을 사용했다. 코드는 에러 표시 없이 잘 활성화 되었고, 위 사진처럼 사용가능한 메서드에 Lombok annotation이 생성해준 메서드들이 잘 나왔다. 그런데 계속 cannot find symbol 오류가 발생했다🤨 더 멘붕인건 Lombok annotation이 생성해준 equals()는 문제없이 호출이 된다는 것이었다&amp;hellip;.
+&amp;nbsp;
+설정 과정  IntelliJ - lombok 플러그인 설치 build.gradle에 compile &amp;quot;org.projectlombok:lombok:1.18.8&amp;quot; 추가 설정 - Enable annotation processing 체크  &amp;nbsp;
+Check 사항  설정 - Build, Execution, Deployment - Complier - Annotation Processors  Enable annotation processing에 체크했는지</description>
+    </item>
+    
+  </channel>
+</rss>

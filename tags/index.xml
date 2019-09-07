@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Chunbong</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 13:20:38 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gradle</title>
+      <link>https://chunbong.github.io/tags/gradle/</link>
+      <pubDate>Fri, 06 Sep 2019 13:20:38 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lombok</title>
+      <link>https://chunbong.github.io/tags/lombok/</link>
+      <pubDate>Fri, 06 Sep 2019 13:20:38 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/lombok/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Basic Elements</title>
