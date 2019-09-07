@@ -85,13 +85,13 @@ body {
 	order: 1;
 	min-width: 0;
 	align-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .single {
 	width: 100%;
 	max-width: 920px;
-	display: flex;
-	justify-content: center;
 }
 
 .sidebar {
