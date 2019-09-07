@@ -30,20 +30,74 @@
     </item>
     
     <item>
-      <title>SpringBoot</title>
-      <link>https://chunbong.github.io/tags/springboot/</link>
-      <pubDate>Thu, 29 Aug 2019 21:11:52 +0900</pubDate>
+      <title>Servlet</title>
+      <link>https://chunbong.github.io/tags/servlet/</link>
+      <pubDate>Thu, 05 Sep 2019 02:23:31 +0900</pubDate>
       
-      <guid>https://chunbong.github.io/tags/springboot/</guid>
+      <guid>https://chunbong.github.io/tags/servlet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Problem Solving</title>
+      <link>https://chunbong.github.io/tags/problem-solving/</link>
+      <pubDate>Wed, 04 Sep 2019 03:19:11 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/problem-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://chunbong.github.io/tags/python/</link>
+      <pubDate>Wed, 04 Sep 2019 03:19:11 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>코딩 테스트</title>
+      <link>https://chunbong.github.io/tags/%EC%BD%94%EB%94%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8/</link>
+      <pubDate>Wed, 04 Sep 2019 03:19:11 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/%EC%BD%94%EB%94%A9-%ED%85%8C%EC%8A%A4%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sorting</title>
+      <link>https://chunbong.github.io/tags/sorting/</link>
+      <pubDate>Tue, 03 Sep 2019 02:20:56 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/sorting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring Boot</title>
       <link>https://chunbong.github.io/tags/spring-boot/</link>
-      <pubDate>Thu, 29 Aug 2019 01:10:22 +0900</pubDate>
+      <pubDate>Thu, 29 Aug 2019 21:11:52 +0900</pubDate>
       
       <guid>https://chunbong.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prime Number</title>
+      <link>https://chunbong.github.io/tags/prime-number/</link>
+      <pubDate>Thu, 29 Aug 2019 03:15:29 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/prime-number/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>소수 알고리즘</title>
+      <link>https://chunbong.github.io/tags/%EC%86%8C%EC%88%98-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+      <pubDate>Thu, 29 Aug 2019 03:15:29 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/%EC%86%8C%EC%88%98-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
       <description></description>
     </item>
     

@@ -6,10 +6,24 @@
     <description>Recent content in Spring Boot on Chunbong</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Aug 2019 01:10:22 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 21:11:52 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Boot - GET 요청 처리</title>
+      <link>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-02/</link>
+      <pubDate>Thu, 29 Aug 2019 21:11:52 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-02/</guid>
+      <description>패스트캠퍼스 강의 내용을 정리
+ 
+컨트롤러 사용자의 요청을 받기 위해 주소를 설정해야 한다.
+컨트롤러는 주소들의 묶음을 모아놓은 것을 말한다
+
+GET 요청 처리 방법 @RestController @RequestMapping(&amp;#34;/api&amp;#34;) public class GetController { @RequestMapping(method = RequestMethod.GET, path = &amp;#34;/getMethod&amp;#34;) public String getRequest() { return &amp;#34;Hi getMethod&amp;#34;; } }  @RestController  spring에게 &amp;ldquo;해당 클래스를 RestController로 사용할거야&amp;rdquo;라고 알려주는 어노테이션  @RequestMapping(&amp;quot;/api&amp;quot;)  API 주소를 매핑하기 위해 사용하는 어노테이션 어떤 주소를 받을 것인지 path를 지정 localhost:8080/api 까지 주소가 매핑된다  @RequestMapping(method = RequestMethod.</description>
+    </item>
     
     <item>
       <title>Spring Boot - admin 프로젝트 주제 &amp; 목표</title>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sorting on Chunbong</title>
+    <link>https://chunbong.github.io/tags/sorting/</link>
+    <description>Recent content in sorting on Chunbong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Sep 2019 02:20:56 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/sorting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>정렬 - key 매개 변수, operator 모듈, 딕셔너리 정렬</title>
+      <link>https://chunbong.github.io/post/python/sort-01/</link>
+      <pubDate>Tue, 03 Sep 2019 02:20:56 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/python/sort-01/</guid>
+      <description>sorted() 모든 iterable을 정렬할 수 있다
+
+key 매개 변수  각 정렬 요소에 대해 호출할 함수를 지정할 수 있다. key 매개 변수로 지정된 함수는 정렬 목적으로 사용할 키를 반환해야 한다. 여러 레코드가 같은 키를 가질 때, 원래의 순서가 유지된다 → 정렬 안정성  
+특정 인덱스를 기준으로 정렬하기 &amp;gt;&amp;gt;&amp;gt; student_tuples = [ ... (&amp;#39;john&amp;#39;, &amp;#39;A&amp;#39;, 15), ... (&amp;#39;jane&amp;#39;, &amp;#39;B&amp;#39;, 12), ... (&amp;#39;dave&amp;#39;, &amp;#39;B&amp;#39;, 10), ... ] &amp;gt;&amp;gt;&amp;gt; sorted(student_tuples, key=lambda student: student[2]) # sort by age [(&amp;#39;dave&amp;#39;, &amp;#39;B&amp;#39;, 10), (&amp;#39;jane&amp;#39;, &amp;#39;B&amp;#39;, 12), (&amp;#39;john&amp;#39;, &amp;#39;A&amp;#39;, 15)]</description>
+    </item>
+    
+  </channel>
+</rss>
