@@ -59,7 +59,6 @@ body {
 .container {
 	position: relative;
 	width: 100%;
-	/* max-width: 1080px; */
 }
 
 /* .container--outer {
@@ -91,7 +90,7 @@ body {
 
 .single {
 	width: 100%;
-	max-width: 920px;
+	max-width: 1150px;
 }
 
 .sidebar {
@@ -412,6 +411,13 @@ select {
 .header {
 	background: #fff;
 	border-bottom: 1px solid #eeeeee;
+	display: flex;
+	justify-content: center;
+}
+
+.header .container {
+	width: 100%;
+	max-width: 1150px;
 }
 
 .logo {
