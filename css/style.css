@@ -89,6 +89,9 @@ body {
 
 .single {
 	width: 100%;
+	max-width: 920px;
+	display: flex;
+	justify-content: center;
 }
 
 .sidebar {
