@@ -6,10 +6,32 @@
     <description>Recent content in Problem Solving on Chunbong</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Sep 2019 03:19:11 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Sep 2019 03:14:59 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/problem-solving/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ_1920 수 찾기</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-05-boj1920/</link>
+      <pubDate>Mon, 09 Sep 2019 03:14:59 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-05-boj1920/</guid>
+      <description>문제
+ 
+Code - 이진탐색 import sys sys.setrecursionlimit(10000) n = int(input()) a = list(map(int, input().split())) m = int(input()) nums = list(map(int, input().split())) def binary_search(target, start, end, data): if start &amp;gt; end: return 0 mid = (start + end) // 2 if data[mid] == target: return 1 if data[mid] &amp;lt; target: start = mid + 1 else: end = mid - 1 return binary_search(target, start, end, data) a.sort() for i in range(m): print(binary_search(nums[i], 0, n-1, a))</description>
+    </item>
+    
+    <item>
+      <title>2018년 KAKAO BLIND RECRUITMENT - 무지의 먹방 라이브</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-04-kakaoblind-04/</link>
+      <pubDate>Mon, 09 Sep 2019 03:11:20 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-04-kakaoblind-04/</guid>
+      <description>문제
+ 
+Code from queue import PriorityQueue def solution(food_times, k): answer = 0 if sum(food_times) &amp;lt;= k: return -1 # (food_times, index)를 사용해 우선순위 큐를 생성 q = PriorityQueue() for i in range(len(food_times)): q.put((food_times[i], i+1)) length = len(food_times) remaining_k = k prev = 0 while (q.queue[0][0] - prev) * length &amp;lt;= remaining_k: remaining_k -= ((q.queue[0][0] - prev) * length) length -= 1 prev = q.get()[0] # 큐에 남아있는 원소를 원래 순서대로 다시 정렬 temp = sorted(q.</description>
+    </item>
     
     <item>
       <title>2018년 KAKAO BLIND RECRUITMENT - 후보키</title>
@@ -17,7 +39,9 @@
       <pubDate>Wed, 04 Sep 2019 03:19:11 +0900</pubDate>
       
       <guid>https://chunbong.github.io/post/algorithm/problem-03-kakaoblind-03/</guid>
-      <description>Code from itertools import combinations def checkDuplicate(data, length): if len(set(data)) == length: return True # 중복 없음 return False # 중복 있음 def solution(relation): answer = 0 tupleLength = len(relation) columnLength = len(relation[0]) columnList = [i for i in range(columnLength)] columnData = {} for column in range(columnLength): for t in range(tupleLength): if column in columnData: columnData[column].append(relation[t][column]) else: columnData[column] = [relation[t][column]] superkey = [] for key in range(columnLength): if checkDuplicate(columnData[key], tupleLength): superkey.</description>
+      <description>문제
+ 
+Code from itertools import combinations def checkDuplicate(data, length): if len(set(data)) == length: return True # 중복 없음 return False # 중복 있음 def solution(relation): answer = 0 tupleLength = len(relation) columnLength = len(relation[0]) columnList = [i for i in range(columnLength)] columnData = {} for column in range(columnLength): for t in range(tupleLength): if column in columnData: columnData[column].append(relation[t][column]) else: columnData[column] = [relation[t][column]] superkey = [] for key in range(columnLength): if checkDuplicate(columnData[key], tupleLength): superkey.</description>
     </item>
     
     <item>
@@ -26,7 +50,9 @@
       <pubDate>Tue, 03 Sep 2019 03:20:38 +0900</pubDate>
       
       <guid>https://chunbong.github.io/post/algorithm/problem-02-kakaoblind-02/</guid>
-      <description>Code from operator import itemgetter def solution(N, stages): answer = [] stages.sort() l = len(stages) stages.append(501) now_stage = stages[0] not_clear_user = 0 failure_rate = {} check = [False] * N i = 0 while True: if stages[i] == now_stage: not_clear_user += 1 else: reched_user = l - i + not_clear_user if now_stage != N+1: failure_rate[now_stage] = float(not_clear_user) / float(reched_user) check[now_stage-1] = True now_stage = stages[i] if now_stage == N+1: break not_clear_user = 1 if stages[i] == 501: break i += 1 temp = sorted(failure_rate.</description>
+      <description>문제
+ 
+Code from operator import itemgetter def solution(N, stages): answer = [] stages.sort() l = len(stages) stages.append(501) now_stage = stages[0] not_clear_user = 0 failure_rate = {} check = [False] * N i = 0 while True: if stages[i] == now_stage: not_clear_user += 1 else: reched_user = l - i + not_clear_user if now_stage != N+1: failure_rate[now_stage] = float(not_clear_user) / float(reched_user) check[now_stage-1] = True now_stage = stages[i] if now_stage == N+1: break not_clear_user = 1 if stages[i] == 501: break i += 1 temp = sorted(failure_rate.</description>
     </item>
     
     <item>
@@ -35,8 +61,9 @@
       <pubDate>Tue, 03 Sep 2019 03:12:52 +0900</pubDate>
       
       <guid>https://chunbong.github.io/post/algorithm/problem-01-kakaoblind-01/</guid>
-      <description>Code from collections import deque def solution(record): answer = [] info = [] queue = deque() user = {} for case in record: # 1 info = case.split() queue.append((info[0], info[1])) if len(info) == 3: user[info[1]] = info[2] # 2 while(queue): cmd, id = queue.popleft() nickname = user[id] if cmd == &amp;#34;Enter&amp;#34;: answer.append(nickname + &amp;#34;님이 들어왔습니다.&amp;#34;) elif cmd == &amp;#34;Leave&amp;#34;: answer.append(nickname + &amp;#34;님이 나갔습니다.&amp;#34;) return answer 
-풀이 방법  입력을 쪼개서 (명령어, ID) 쌍을 큐에 넣고, (ID : 닉네임)을 딕셔너리에 추가했다.</description>
+      <description>문제
+ 
+Code from collections import deque def solution(record): answer = [] info = [] queue = deque() user = {} for case in record: # 1 info = case.split() queue.append((info[0], info[1])) if len(info) == 3: user[info[1]] = info[2] # 2 while(queue): cmd, id = queue.popleft() nickname = user[id] if cmd == &amp;#34;Enter&amp;#34;: answer.append(nickname + &amp;#34;님이 들어왔습니다.&amp;#34;) elif cmd == &amp;#34;Leave&amp;#34;: answer.append(nickname + &amp;#34;님이 나갔습니다.&amp;#34;) return answer</description>
     </item>
     
   </channel>

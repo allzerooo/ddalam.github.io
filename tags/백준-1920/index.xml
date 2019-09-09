@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>백준 1920 on Chunbong</title>
+    <link>https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-1920/</link>
+    <description>Recent content in 백준 1920 on Chunbong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Sep 2019 03:14:59 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-1920/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ_1920 수 찾기</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-05-boj1920/</link>
+      <pubDate>Mon, 09 Sep 2019 03:14:59 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-05-boj1920/</guid>
+      <description>문제
+ 
+Code - 이진탐색 import sys sys.setrecursionlimit(10000) n = int(input()) a = list(map(int, input().split())) m = int(input()) nums = list(map(int, input().split())) def binary_search(target, start, end, data): if start &amp;gt; end: return 0 mid = (start + end) // 2 if data[mid] == target: return 1 if data[mid] &amp;lt; target: start = mid + 1 else: end = mid - 1 return binary_search(target, start, end, data) a.sort() for i in range(m): print(binary_search(nums[i], 0, n-1, a))</description>
+    </item>
+    
+  </channel>
+</rss>
