@@ -6,10 +6,21 @@
     <description>Recent content in Python on Chunbong</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Sep 2019 03:14:59 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 03:23:20 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2018년 KAKAO BLIND RECRUITMENT - 길 찾기 게임</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-06-kakaoblind-05/</link>
+      <pubDate>Tue, 10 Sep 2019 03:23:20 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-06-kakaoblind-05/</guid>
+      <description>문제
+ 
+Code import sys sys.setrecursionlimit(10**6) from operator import itemgetter class Tree: def __init__(self, nodeinfo): self.data = nodeinfo[0] self.nodeNum = self.data[2] leftList = list(filter(lambda x: x[0] &amp;lt; self.data[0], nodeinfo)) rightList = list(filter(lambda x: x[0] &amp;gt; self.data[0], nodeinfo)) if leftList != []: self.left = Tree(leftList) else: self.left = None if rightList != []: self.right = Tree(rightList) else: self.right = None def preorder(root, preorderList): if root is None: return preorderList.</description>
+    </item>
     
     <item>
       <title>BOJ_1920 수 찾기</title>
