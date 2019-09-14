@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>post 요청 on Chunblog</title>
+    <link>https://chunbong.github.io/tags/post-%EC%9A%94%EC%B2%AD/</link>
+    <description>Recent content in post 요청 on Chunblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2019 21:13:42 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/post-%EC%9A%94%EC%B2%AD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Boot - POST 요청 처리, Content-Type</title>
+      <link>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-03/</link>
+      <pubDate>Sun, 08 Sep 2019 21:13:42 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-03/</guid>
+      <description>패스트캠퍼스 강의 내용을 정리
+ 
+POST 요청 처리 
+URL Mapping GetController 클래스와 PostCotroller 클래스에 똑같이 @RequestMapping(&amp;quot;/api&amp;quot;)를 쓰는 것은 상관없다. 주소가 겹치는 것은 클래스 내 메서드에 단위로 판단된다
+ 
+POST 요청이 발생하는 경우  HTML form 태그를 사용하는 경우 ajax에서 비동기화 검색 ajax에서 post 방식으로 보내기   
+POST 요청 - Parameter 처리 HTTP 통신을 할 때 POST 요청은 요청 메시지의 body에 데이터를 넣어서 보낸다. 따라서 요청 메시지 body에 있는 데이터를 받아서 처리하는 부분이 필요하다.</description>
+    </item>
+    
+  </channel>
+</rss>
