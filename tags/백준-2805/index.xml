@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>백준 2805 on Chunbong</title>
+    <link>https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-2805/</link>
+    <description>Recent content in 백준 2805 on Chunbong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Sep 2019 03:17:06 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-2805/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ_2805 나무 자르기</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-07-boj2805/</link>
+      <pubDate>Wed, 11 Sep 2019 03:17:06 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-07-boj2805/</guid>
+      <description>문제
+ 
+Code n, m = map(int, input().split()) h = list(map(int, input().split())) maxH = max(h) leftbound = 0 rightbound = maxH answer = 0 while leftbound &amp;lt;= rightbound: mid = (rightbound + leftbound) // 2 takenLength = 0 for i in range(n): if h[i] &amp;gt; mid: takenLength += (h[i] - mid) if takenLength &amp;gt;= m: leftbound = mid + 1 answer = mid else: rightbound = mid - 1 print(answer)</description>
+    </item>
+    
+  </channel>
+</rss>

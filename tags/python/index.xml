@@ -6,10 +6,43 @@
     <description>Recent content in Python on Chunbong</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Sep 2019 03:23:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Sep 2019 03:17:48 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>프로그래머스 - 소수 찾기</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-09-programmers01/</link>
+      <pubDate>Thu, 12 Sep 2019 03:17:48 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-09-programmers01/</guid>
+      <description>문제
+ 
+Code from itertools import permutations def solution(numbers): answer = 0 # str -&amp;gt; list splitNumbers = list(numbers) # 입력으로 주어진 숫자들로 가장 큰 수를 만들기 temp = sorted(numbers, reverse=True) temp = &amp;#39;&amp;#39;.join(temp) maxNumber = int(temp) # 0 ~ 가장 큰 수까지 모든 소수 찾기 primeNumbers = [0] * (maxNumber + 1) primeNumbers[0], primeNumbers[1] = -1, -1 for i in range(2, maxNumber+1): j = i * i while j &amp;lt;= maxNumber: primeNumbers[j] = -1 j += i # 1자리 수부터 가능한 모든 자리의 수가 소수인지 확인 check = [False] * (maxNumber + 1) for length in range(1, len(numbers)+1): permutationList = permutations(splitNumbers, length) permutationList = set(permutationList) for number in permutationList: number = &amp;#39;&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>BOJ_2512 예산</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-08-boj2512/</link>
+      <pubDate>Wed, 11 Sep 2019 03:17:48 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-08-boj2512/</guid>
+      <description>문제
+ 
+Code answer = 0 n = int(input()) budgetRequest = list(map(int, input().split())) totalBudget = int(input()) sumBudgetRequest = sum(budgetRequest) if sumBudgetRequest &amp;lt; totalBudget: answer = max(budgetRequest) else: leftbound = 0 rightbound = max(budgetRequest) while leftbound &amp;lt;= rightbound: mid = (leftbound + rightbound) // 2 sumBudgetRequest = 0 for i in range(n): if budgetRequest[i] &amp;gt; mid: sumBudgetRequest += mid else: sumBudgetRequest += budgetRequest[i] if sumBudgetRequest &amp;lt;= totalBudget: if mid &amp;gt; answer: answer = mid leftbound = mid + 1 else: rightbound = mid - 1 print(answer)</description>
+    </item>
+    
+    <item>
+      <title>BOJ_2805 나무 자르기</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-07-boj2805/</link>
+      <pubDate>Wed, 11 Sep 2019 03:17:06 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-07-boj2805/</guid>
+      <description>문제
+ 
+Code n, m = map(int, input().split()) h = list(map(int, input().split())) maxH = max(h) leftbound = 0 rightbound = maxH answer = 0 while leftbound &amp;lt;= rightbound: mid = (rightbound + leftbound) // 2 takenLength = 0 for i in range(n): if h[i] &amp;gt; mid: takenLength += (h[i] - mid) if takenLength &amp;gt;= m: leftbound = mid + 1 answer = mid else: rightbound = mid - 1 print(answer)</description>
+    </item>
     
     <item>
       <title>2018년 KAKAO BLIND RECRUITMENT - 길 찾기 게임</title>
