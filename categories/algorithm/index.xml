@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on Chunbong</title>
+    <title>Algorithm on Chunblog</title>
     <link>https://chunbong.github.io/categories/algorithm/</link>
-    <description>Recent content in Algorithm on Chunbong</description>
+    <description>Recent content in Algorithm on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 12 Sep 2019 03:17:48 +0900</lastBuildDate>

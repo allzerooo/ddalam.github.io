@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>해시 on Chunbong</title>
+    <title>해시 on Chunblog</title>
     <link>https://chunbong.github.io/tags/%ED%95%B4%EC%8B%9C/</link>
-    <description>Recent content in 해시 on Chunbong</description>
+    <description>Recent content in 해시 on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Sep 2019 03:12:52 +0900</lastBuildDate>
