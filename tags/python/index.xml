@@ -6,10 +6,19 @@
     <description>Recent content in Python on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Sep 2019 03:17:48 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 03:23:29 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>비트마스크</title>
+      <link>https://chunbong.github.io/post/algorithm/02-bitmask/</link>
+      <pubDate>Sun, 15 Sep 2019 03:23:29 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/02-bitmask/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>프로그래머스 - 소수 찾기</title>
@@ -124,10 +133,10 @@ key 매개 변수  각 정렬 요소에 대해 호출할 함수를 지정할 수
     
     <item>
       <title>소수 판별 알고리즘</title>
-      <link>https://chunbong.github.io/post/algorithm/prime-number-01/</link>
+      <link>https://chunbong.github.io/post/algorithm/01-prime-number/</link>
       <pubDate>Thu, 29 Aug 2019 03:15:29 +0900</pubDate>
       
-      <guid>https://chunbong.github.io/post/algorithm/prime-number-01/</guid>
+      <guid>https://chunbong.github.io/post/algorithm/01-prime-number/</guid>
       <description>백준 강의 내용 정리
  
  약수가 1과 자기 자신 밖에 없는 수  
