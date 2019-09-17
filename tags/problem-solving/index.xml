@@ -23,6 +23,18 @@ Code import sys m = int(input()) s = 0 while m != 0: operator, *operand = sys.st
     </item>
     
     <item>
+      <title>BOJ_1182 부부수열의 합</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-11-boj1182/</link>
+      <pubDate>Mon, 16 Sep 2019 03:14:35 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-11-boj1182/</guid>
+      <description>문제
+ 
+Code n, s = map(int, input().split()) nums = list(map(int, input().split())) elements = (1 &amp;lt;&amp;lt; n) - 1 subset = elements answer = 0 while subset != 0: sum = 0 for i in range(n): if subset &amp;amp; (1 &amp;lt;&amp;lt; i): sum += nums[i] if sum == s: answer += 1 subset = (subset-1) &amp;amp; elements print(answer) 
+풀이 부분 수열을 집합과 비트마스크를 사용해서 구할 수 있다.</description>
+    </item>
+    
+    <item>
       <title>프로그래머스 - 소수 찾기</title>
       <link>https://chunbong.github.io/post/algorithm/problem-09-programmers01/</link>
       <pubDate>Thu, 12 Sep 2019 03:17:48 +0900</pubDate>
