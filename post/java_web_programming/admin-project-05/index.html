@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Spring Boot - JPA를 사용한 CRUD 테스트 하기 - Chunblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="JPA와 JPA를 사용한 Entity생성, JPA 관련 어노테이션, Repository에 대해">
+	<meta property="og:title" content="Spring Boot - JPA를 사용한 CRUD 테스트 하기" />
+<meta property="og:description" content="JPA와 JPA를 사용한 Entity생성, JPA 관련 어노테이션, Repository에 대해" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chunbong.github.io/post/java_web_programming/admin-project-05/" />
+<meta property="article:published_time" content="2019-09-13T21:13:20+09:00" />
+<meta property="article:modified_time" content="2019-09-13T21:13:20+09:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Chunblog" rel="home">
+				<div class="logo__title">Chunblog</div>
+				<div class="logo__tagline">Chunbong STUDY LOG</div>
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main single" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Spring Boot - JPA를 사용한 CRUD 테스트 하기</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-09-13T21:13:20">September 13, 2019</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/java-web-programming" rel="category">Java Web Programming</a></span>
+</div>
+</div>
+		</header><div class="content post__content clearfix">
+			
+
+<blockquote>
+<p>패스트캠퍼스 강의를 들으며 공부한 내용을 정리</p>
+</blockquote>
+
+<p><br/></p>
+
+<ul>
+<li><p>보통 쿼리를 작성할 때</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String <span style="color:#a6e22e">sql</span> <span style="color:#f92672">=</span> insert <span style="color:#a6e22e">into</span> user(<span style="color:#f92672">%</span>s, <span style="color:#f92672">%</span>s, <span style="color:#f92672">%</span>d) values (account, email, age);</code></pre></div>
+<p>이런 식으로 했다. JPA의 장점은 Object를 사용해서 데이터베이스를 쉽게 다룰 수 있다</p></li>
+
+<li><p><code>JpaRepository</code>를 상속받으면 기본적인 CRUD를 제공받는다.</p>
+
+<ul>
+<li>예를 들어, Create 관련은 <code>save()</code>, Read 관련은 <code>findAll()</code>, <code>findById()</code> 등등등등</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+<h1 id="test-코드-작성하기">Test 코드 작성하기</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">class</span> UserRepositorIAyTest <span style="color:#a6e22e">extends</span> AdminApplicationTests {
+
+  <span style="color:#a6e22e">@Autowired</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">UserRepository</span> userRepository;
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> create() {
+
+  }
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> read() {
+
+  }
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> update() {
+
+  }
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> delete() {
+
+  }
+}</code></pre></div>
+<p><br/></p>
+
+<h1 id="create">Create</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> create() {
+  User <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> User();
+  user.<span style="color:#a6e22e">setAccount</span>(<span style="color:#e6db74">&#34;TestUser01&#34;</span>);
+  user.<span style="color:#a6e22e">setEmail</span>(<span style="color:#e6db74">&#34;TestUser01@gmail.com&#34;</span>);
+  user.<span style="color:#a6e22e">setPhoneNumber</span>(<span style="color:#e6db74">&#34;010-1111-1111&#34;</span>);
+  user.<span style="color:#a6e22e">setCreatedAt</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+  user.<span style="color:#a6e22e">setCreatedBy</span>(<span style="color:#e6db74">&#34;admin&#34;</span>);
+
+  User <span style="color:#a6e22e">newUser</span> <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">save</span>(user);
+  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;newUser:&#34;</span> <span style="color:#f92672">+</span>newUser);
+}</code></pre></div>
+<ul>
+<li><code>User newUser = userRepository.save(user)</code>
+
+<ul>
+<li><code>save</code>의 인자로 <code>user</code>를 넘기면 데이터베이스에 저장된 새로운 <code>User</code> 객체를 반환해준다. 이 때 반환된 객체에는 Auto Increment가 적용된 값도 포함되어 있다</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+<h1 id="read">Read</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> read() {
+  Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">findById</span>(2L);
+
+  user.<span style="color:#a6e22e">ifPresent</span>(selectUser <span style="color:#f92672">-&gt;</span> {
+    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;user : &#34;</span> <span style="color:#f92672">+</span> selectUser);
+    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;email : &#34;</span> <span style="color:#f92672">+</span> selectUser.<span style="color:#a6e22e">getEmail</span>());
+  });
+}</code></pre></div>
+<ul>
+<li><code>findById()</code>는 <code>Optional</code> 형태로 리턴</li>
+<li><code>ifPresent()</code>는 <code>user</code>에 값이 있을 때 실행된다</li>
+</ul>
+
+<p><br/></p>
+
+<h1 id="update">Update</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> update() {
+  Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">findById</span>(2L);
+
+  user.<span style="color:#a6e22e">ifPresent</span>(selectUser <span style="color:#f92672">-&gt;</span> {
+    selectUser.<span style="color:#a6e22e">setAccount</span>((<span style="color:#e6db74">&#34;abab@gmail.com&#34;</span>));
+    selectUser.<span style="color:#a6e22e">setUpdatedAt</span>(LocalDateTime.<span style="color:#a6e22e">now</span>());
+    selectUser.<span style="color:#a6e22e">setUpdatedBy</span>(<span style="color:#e6db74">&#34;update method()&#34;</span>);
+
+    userRepository.<span style="color:#a6e22e">save</span>(selectUser);
+  });
+}</code></pre></div>
+<ul>
+<li>create를 할 때 <code>save()</code>를 하면 새로운 객체가 생성되었는데, create인지 update인지 어떻게 구분할까?
+
+<ul>
+<li>해당 아이디의 <code>user</code>를 찾고, <code>user</code>가 있으면 해당 아이디의 <code>user</code>를 한 번 더 검색하는데, 아이디가 존재하면 update로 인식해 새로운 객체를 생성하지 않고 update로 처리한다</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+<h1 id="delete">Delete</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#a6e22e">@Transactional</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> delete() {
+  Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">findById</span>(3L);
+
+  Assert.<span style="color:#a6e22e">assertTrue</span>(user.<span style="color:#a6e22e">isPresent</span>());
+
+  user.<span style="color:#a6e22e">ifPresent</span>(selectUser <span style="color:#f92672">-&gt;</span> {
+    userRepository.<span style="color:#a6e22e">delete</span>(selectUser);
+  });
+
+  Optional<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">deleteUser</span> <span style="color:#f92672">=</span> userRepository.<span style="color:#a6e22e">findById</span>(3L);
+
+  Assert.<span style="color:#a6e22e">assertFalse</span>((deleteUser.<span style="color:#a6e22e">isPresent</span>()));
+}</code></pre></div>
+<ul>
+<li><code>@Transactional</code>
+
+<ul>
+<li>테스트를 할 때마다 실제 데이터베이스에 변경을 주고 싶지 않을 때 사용할 수 있다. 마지막에 다시 rollback을 해준다</li>
+</ul></li>
+<li><code>Assert.assertTrue(user.isPresent())</code>, <code>Assert.assertFalse((deleteUser.isPresent()))</code>
+
+<ul>
+<li>JUnit 패키지를 사용해 <code>user</code>가 있을 때만 delete를 수행하고, <code>user</code>가 잘 삭제되었는지 확인하도록 하는 것이 테스트 코드에 더 적합하다</li>
+</ul></li>
+</ul>
+
+<p><br/></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/admin-site/" rel="tag">Admin Site</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/jpa/" rel="tag">JPA</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/repository/" rel="tag">Repository</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+			</div>
+			
+		</div>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

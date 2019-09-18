@@ -133,6 +133,31 @@
   </url>
   
   <url>
+    <loc>https://chunbong.github.io/tags/admin-site/</loc>
+    <lastmod>2019-09-13T21:13:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/tags/jpa/</loc>
+    <lastmod>2019-09-13T21:13:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/tags/repository/</loc>
+    <lastmod>2019-09-13T21:13:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/tags/spring-boot/</loc>
+    <lastmod>2019-09-13T21:13:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/post/java_web_programming/admin-project-05/</loc>
+    <lastmod>2019-09-13T21:13:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chunbong.github.io/tags/%EC%86%8C%EC%88%98/</loc>
     <lastmod>2019-09-12T03:17:48+09:00</lastmod>
   </url>
@@ -145,6 +170,11 @@
   <url>
     <loc>https://chunbong.github.io/post/algorithm/problem-09-programmers01/</loc>
     <lastmod>2019-09-12T03:17:48+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chunbong.github.io/post/java_web_programming/admin-project-04/</loc>
+    <lastmod>2019-09-11T21:03:20+09:00</lastmod>
   </url>
   
   <url>
@@ -228,11 +258,6 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/tags/admin-site/</loc>
-    <lastmod>2019-09-08T21:13:42+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://chunbong.github.io/tags/content-type/</loc>
     <lastmod>2019-09-08T21:13:42+09:00</lastmod>
   </url>
@@ -243,12 +268,12 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/tags/spring-boot/</loc>
+    <loc>https://chunbong.github.io/tags/restlet-client/</loc>
     <lastmod>2019-09-08T21:13:42+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-03/</loc>
+    <loc>https://chunbong.github.io/post/java_web_programming/admin-project-03/</loc>
     <lastmod>2019-09-08T21:13:42+09:00</lastmod>
   </url>
   
@@ -318,7 +343,7 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-02/</loc>
+    <loc>https://chunbong.github.io/post/java_web_programming/admin-project-02/</loc>
     <lastmod>2019-08-29T21:11:52+09:00</lastmod>
   </url>
   
@@ -343,7 +368,7 @@
   </url>
   
   <url>
-    <loc>https://chunbong.github.io/post/java_web_programming/fastcampus-admin-project-01/</loc>
+    <loc>https://chunbong.github.io/post/java_web_programming/admin-project-01/</loc>
     <lastmod>2019-08-29T01:10:22+09:00</lastmod>
   </url>
   

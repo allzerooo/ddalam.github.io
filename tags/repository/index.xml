@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Repository on Chunblog</title>
+    <link>https://chunbong.github.io/tags/repository/</link>
+    <description>Recent content in Repository on Chunblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Sep 2019 21:13:20 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/repository/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Boot - JPA를 사용한 CRUD 테스트 하기</title>
+      <link>https://chunbong.github.io/post/java_web_programming/admin-project-05/</link>
+      <pubDate>Fri, 13 Sep 2019 21:13:20 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-05/</guid>
+      <description>패스트캠퍼스 강의를 들으며 공부한 내용을 정리
+ 
+ 보통 쿼리를 작성할 때
+String sql = insert into user(%s, %s, %d) values (account, email, age); 이런 식으로 했다. JPA의 장점은 Object를 사용해서 데이터베이스를 쉽게 다룰 수 있다
+ JpaRepository를 상속받으면 기본적인 CRUD를 제공받는다.
+ 예를 들어, Create 관련은 save(), Read 관련은 findAll(), findById() 등등등등   
+Test 코드 작성하기 public class UserRepositorIAyTest extends AdminApplicationTests { @Autowired private UserRepository userRepository; public void create() { } public void read() { } public void update() { } public void delete() { } }</description>
+    </item>
+    
+    <item>
+      <title>Spring Boot - JPA, Entity 생성과 Repository</title>
+      <link>https://chunbong.github.io/post/java_web_programming/admin-project-04/</link>
+      <pubDate>Wed, 11 Sep 2019 21:03:20 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-04/</guid>
+      <description>패스트캠퍼스 강의를 들으며 공부한 내용을 정리
+ 
+JPA ( Java Persistent API )  ORM( Object Relational Mapping )으로 관계형 데이터베이스의 정보를 객체지향으로 손쉽게 활용할 수 있도록 도와주는 도구. 라이브러리 Object(자바 객체)와 Relation(관계형 데이터베이스) 둘간의 매핑을 통해서 보다 쉽게 적용할 수 있는 기술을 제공 쿼리에 집중하기 보다는 객체에 집중할 수 있도록  
+Entity 생성과 Repository Entity 생성  데이터베이스의 테이블은 JPA의 엔티티와 매핑된다 JPA에서는 어노테이션을 사용해 데이터베이스를 다룰 수 있다  @Entity : 해당 class가 엔티티임을 명시 @Table(name= &amp;quot;TABLE_NAME&amp;quot;) : 실제 DB 테이블의 이름을 명시 DB 테이블의 이름과 동일하게 class를 생성하면 생략할 수 있다 @Id : index primary key를 명시 @Column : 실제 DB 테이블의 column 이름을 명시 @GeneratedValue : primary key 식별키의 전략을 설정 mysql은 식별키 전략으로 IDENTITY를 사용한다  snake case로 된 DB의 column명을 camel case를 사용해 자바 변수로 선언하면 자동으로 매핑해준다</description>
+    </item>
+    
+  </channel>
+</rss>
