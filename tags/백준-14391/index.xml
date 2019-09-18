@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>백준 14391 on Chunblog</title>
+    <link>https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-14391/</link>
+    <description>Recent content in 백준 14391 on Chunblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Sep 2019 03:14:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-14391/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ_14391 종이 조각</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-13-boj14391/</link>
+      <pubDate>Wed, 18 Sep 2019 03:14:17 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-13-boj14391/</guid>
+      <description>문제
+ 
+Code n, m = map(int, input().split()) paper = [list(map(int, input())) for _ in range(n)] answer = -1 for case in range(1&amp;lt;&amp;lt;(n*m)): sum = 0 for i in range(n): num = 0 for j in range(m): idx = i * m + j if (case &amp;amp; (1&amp;lt;&amp;lt;idx)) == 0: num = num * 10 + paper[i][j] else: sum += num num = 0 sum += num for i in range(m): num = 0 for j in range(n): idx = j * m + i if (case &amp;amp; (1&amp;lt;&amp;lt;idx)) !</description>
+    </item>
+    
+  </channel>
+</rss>

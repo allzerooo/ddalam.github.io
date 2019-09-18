@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Sep 2019 03:14:55 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 03:14:17 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>BOJ_14391 종이 조각</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-13-boj14391/</link>
+      <pubDate>Wed, 18 Sep 2019 03:14:17 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-13-boj14391/</guid>
+      <description>문제
+ 
+Code n, m = map(int, input().split()) paper = [list(map(int, input())) for _ in range(n)] answer = -1 for case in range(1&amp;lt;&amp;lt;(n*m)): sum = 0 for i in range(n): num = 0 for j in range(m): idx = i * m + j if (case &amp;amp; (1&amp;lt;&amp;lt;idx)) == 0: num = num * 10 + paper[i][j] else: sum += num num = 0 sum += num for i in range(m): num = 0 for j in range(n): idx = j * m + i if (case &amp;amp; (1&amp;lt;&amp;lt;idx)) !</description>
+    </item>
+    
+    <item>
+      <title>BOJ_14889 스타트와 링크</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-12-boj14889/</link>
+      <pubDate>Mon, 16 Sep 2019 03:17:27 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-12-boj14889/</guid>
+      <description>문제
+ 
+Code import sys n = int(input()) s = [list(map(int, input().split())) for _ in range(n)] answer = sys.maxsize for subset in range(1, 1&amp;lt;&amp;lt;n): start = [] link = [] if bin(subset).count(&amp;#34;1&amp;#34;) == (n // 2): for i in range(n): if subset &amp;amp; (1&amp;lt;&amp;lt;i): start.append(i) else: link.append(i) else: continue start_capacity = 0 link_capacity = 0 for i in range(n//2): for j in range(n//2): if i == j: continue start_capacity += s[start[i]][start[j]] link_capacity += s[link[i]][link[j]] if abs(start_capacity - link_capacity) &amp;lt; answer: answer = abs(start_capacity - link_capacity) print(answer)</description>
+    </item>
     
     <item>
       <title>BOJ_11734 집합</title>
@@ -23,7 +45,7 @@ Code import sys m = int(input()) s = 0 while m != 0: operator, *operand = sys.st
     </item>
     
     <item>
-      <title>BOJ_1182 부부수열의 합</title>
+      <title>BOJ_1182 부분수열의 합</title>
       <link>https://chunbong.github.io/post/algorithm/problem-11-boj1182/</link>
       <pubDate>Mon, 16 Sep 2019 03:14:35 +0900</pubDate>
       
@@ -32,15 +54,6 @@ Code import sys m = int(input()) s = 0 while m != 0: operator, *operand = sys.st
  
 Code n, s = map(int, input().split()) nums = list(map(int, input().split())) elements = (1 &amp;lt;&amp;lt; n) - 1 subset = elements answer = 0 while subset != 0: sum = 0 for i in range(n): if subset &amp;amp; (1 &amp;lt;&amp;lt; i): sum += nums[i] if sum == s: answer += 1 subset = (subset-1) &amp;amp; elements print(answer) 
 풀이 부분 수열을 집합과 비트마스크를 사용해서 구할 수 있다.</description>
-    </item>
-    
-    <item>
-      <title>비트마스크</title>
-      <link>https://chunbong.github.io/post/algorithm/02-bitmask/</link>
-      <pubDate>Sun, 15 Sep 2019 03:23:29 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/post/algorithm/02-bitmask/</guid>
-      <description></description>
     </item>
     
     <item>

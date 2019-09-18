@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>백준 14889 on Chunblog</title>
+    <link>https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-14889/</link>
+    <description>Recent content in 백준 14889 on Chunblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Sep 2019 03:17:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/%EB%B0%B1%EC%A4%80-14889/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ_14889 스타트와 링크</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-12-boj14889/</link>
+      <pubDate>Mon, 16 Sep 2019 03:17:27 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-12-boj14889/</guid>
+      <description>문제
+ 
+Code import sys n = int(input()) s = [list(map(int, input().split())) for _ in range(n)] answer = sys.maxsize for subset in range(1, 1&amp;lt;&amp;lt;n): start = [] link = [] if bin(subset).count(&amp;#34;1&amp;#34;) == (n // 2): for i in range(n): if subset &amp;amp; (1&amp;lt;&amp;lt;i): start.append(i) else: link.append(i) else: continue start_capacity = 0 link_capacity = 0 for i in range(n//2): for j in range(n//2): if i == j: continue start_capacity += s[start[i]][start[j]] link_capacity += s[link[i]][link[j]] if abs(start_capacity - link_capacity) &amp;lt; answer: answer = abs(start_capacity - link_capacity) print(answer)</description>
+    </item>
+    
+  </channel>
+</rss>
