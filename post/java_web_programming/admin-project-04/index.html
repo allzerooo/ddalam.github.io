@@ -80,17 +80,22 @@
 <ul>
 <li>데이터베이스의 테이블은 JPA의 엔티티와 매핑된다</li>
 <li>JPA에서는 어노테이션을 사용해 데이터베이스를 다룰 수 있다
-
 <ul>
 <li><code>@Entity</code> : 해당 class가 엔티티임을 명시</li>
+  <ul>
+    <li> <code>@Entity</code>를 붙이면 snake case로 된 DB의 column명을 camel case를 사용해 자바 변수로 선언하면 자동으로 매핑해준다</li>
+  </ul>
 <li><code>@Table(name= &quot;TABLE_NAME&quot;)</code> : 실제 DB 테이블의 이름을 명시</li>
-<li>DB 테이블의 이름과 동일하게 class를 생성하면 생략할 수 있다</li>
+  <ul>
+    <li>DB 테이블의 이름과 동일하게 class를 생성하면 생략할 수 있다</li>
+  </ul>
 <li><code>@Id</code> : index primary key를 명시</li>
 <li><code>@Column</code> : 실제 DB 테이블의 column 이름을 명시</li>
 <li><code>@GeneratedValue</code> : primary key 식별키의 전략을 설정</li>
-<li>mysql은 식별키 전략으로 <code>IDENTITY</code>를 사용한다</li>
+  <ul>
+    <li>mysql은 식별키 전략으로 <code>IDENTITY</code>를 사용한다</li>
+  </ul>
 </ul></li>
-<li>snake case로 된 DB의 column명을 camel case를 사용해 자바 변수로 선언하면 자동으로 매핑해준다</li>
 </ul>
 
 <p><br/></p>
