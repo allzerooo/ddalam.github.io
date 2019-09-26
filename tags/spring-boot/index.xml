@@ -68,7 +68,7 @@ GET 요청 처리 방법 @RestController @RequestMapping(&amp;#34;/api&amp;#34;)
     </item>
     
     <item>
-      <title>Spring Boot - Admin Site 프로젝트 목표</title>
+      <title>Admin Site 프로젝트 목표</title>
       <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
       <pubDate>Thu, 29 Aug 2019 01:10:22 +0900</pubDate>
       

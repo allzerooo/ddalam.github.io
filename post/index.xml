@@ -307,7 +307,7 @@ Servlet 구현  웹 브라우저가 GET 메서드 방식으로 요청을 보낼 
     </item>
     
     <item>
-      <title>Spring Boot - Admin Site 프로젝트 목표</title>
+      <title>Admin Site 프로젝트 목표</title>
       <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
       <pubDate>Thu, 29 Aug 2019 01:10:22 +0900</pubDate>
       
