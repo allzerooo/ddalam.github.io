@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Spring Boot - JPA를 사용한 CRUD 테스트 하기 - Chunblog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="JPA와 JPA를 사용한 Entity생성, JPA 관련 어노테이션, Repository에 대해">
+	<meta name="description" content="생성한 Entity를 사용해 CRUD를 할 수 있는지 테스트하는 방법">
 	<meta property="og:title" content="Spring Boot - JPA를 사용한 CRUD 테스트 하기" />
-<meta property="og:description" content="JPA와 JPA를 사용한 Entity생성, JPA 관련 어노테이션, Repository에 대해" />
+<meta property="og:description" content="생성한 Entity를 사용해 CRUD를 할 수 있는지 테스트하는 방법" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chunbong.github.io/post/java_web_programming/admin-project-05/" />
 <meta property="article:published_time" content="2019-09-13T21:13:20+09:00" />
@@ -135,7 +135,7 @@
   });
 }</code></pre></div>
 <ul>
-<li><code>findById()</code>는 <code>Optional</code> 형태로 리턴</li>
+<li>검색 결과가 없을 수도 있기 때문에 <code>Optional</code> 형태로 받는게 좋다</li>
 <li><code>ifPresent()</code>는 <code>user</code>에 값이 있을 때 실행된다</li>
 </ul>
 
