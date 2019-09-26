@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>스택 on Chunblog</title>
+    <link>https://chunbong.github.io/tags/%EC%8A%A4%ED%83%9D/</link>
+    <description>Recent content in 스택 on Chunblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2019 03:14:17 +0900</lastBuildDate>
+    
+	<atom:link href="https://chunbong.github.io/tags/%EC%8A%A4%ED%83%9D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BOJ_5397 키로거</title>
+      <link>https://chunbong.github.io/post/algorithm/problem-14-boj5397/</link>
+      <pubDate>Mon, 23 Sep 2019 03:14:17 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/algorithm/problem-14-boj5397/</guid>
+      <description>문제
+ 
+Code testCase = int(input()) for _ in range(testCase): temp = [] password = [] inputPassword = list(input()) for i in range(len(inputPassword)): if inputPassword[i] == &amp;#34;&amp;lt;&amp;#34;: if password: temp.append(password.pop()) elif inputPassword[i] == &amp;#34;&amp;gt;&amp;#34;: if temp: password.append(temp.pop()) elif inputPassword[i] == &amp;#34;-&amp;#34;: if password: password.pop() else: password.append(inputPassword[i]) for i in range(len(temp)-1, -1, -1): password.append(temp[i]) print(&amp;#39;&amp;#39;.join(password)) 
+풀이  password 리스트의 끝을 커서로, 커서의 오른쪽을 temp 리스트라고 생각 따라서 &amp;lt; 로 이동할 때는 password의 마지막 원소를 temp로 &amp;gt; 로 이동할 때는 temp의 원소를 password로 옮긴다 - 일 때는 password에서 원소를 하나 삭제한다 마지막에 temp에 남아있는 원소들을 다 password에 추가해준다</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BOJ_1966 프린터 큐 - Chunblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="백준 프린터 큐 문제를 Python으로 해결">
+	<meta property="og:title" content="BOJ_1966 프린터 큐" />
+<meta property="og:description" content="백준 프린터 큐 문제를 Python으로 해결" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chunbong.github.io/post/algorithm/problem-15-boj1966/" />
+<meta property="article:published_time" content="2019-09-21T03:14:17+09:00" />
+<meta property="article:modified_time" content="2019-09-21T03:14:17+09:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Chunblog" rel="home">
+				<div class="logo__title">Chunblog</div>
+				<div class="logo__tagline">Chunbong STUDY LOG</div>
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main single" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">BOJ_1966 프린터 큐</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-09-21T03:14:17">September 21, 2019</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/algorithm" rel="category">Algorithm</a></span>
+</div>
+</div>
+		</header><div class="content post__content clearfix">
+			
+
+<blockquote>
+<p><a href="https://www.acmicpc.net/problem/1966">문제</a></p>
+</blockquote>
+
+<p><br/></p>
+
+<h1 id="code">Code</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">testCase <span style="color:#f92672">=</span> int(input())
+
+<span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(testCase):
+  n, m <span style="color:#f92672">=</span> map(int, input()<span style="color:#f92672">.</span>split())
+  q <span style="color:#f92672">=</span> list(map(int, input()<span style="color:#f92672">.</span>split()))
+
+  priorityQ <span style="color:#f92672">=</span> sorted(q, reverse<span style="color:#f92672">=</span>True)   <span style="color:#75715e"># 중요도를 내림차순으로 정렬</span>
+  q <span style="color:#f92672">=</span> [t <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> enumerate(q)]   <span style="color:#75715e"># (index, 중요도)로 q를 구성</span>
+
+  count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">while</span> True:
+    <span style="color:#66d9ef">if</span> q[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> priorityQ[<span style="color:#ae81ff">0</span>]:   <span style="color:#75715e"># q[0]의 중요도가 q 내 가장 큰 중요도와 같을 때</span>
+      count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">if</span> q[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> m:
+        <span style="color:#66d9ef">print</span>(count)
+        <span style="color:#66d9ef">break</span>
+      <span style="color:#66d9ef">else</span>:
+        q<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+        priorityQ<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)  <span style="color:#75715e"># 출력이 됐으면 중요도도 pop을 해서 다음 중요도가 가장 앞에 올 수 있도록</span>
+    <span style="color:#66d9ef">else</span>:
+      temp <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)  <span style="color:#75715e"># 출력이 되지 않았으면 문서만 맨 뒤로 배치</span>
+      q<span style="color:#f92672">.</span>append(temp)</code></pre></div>
+<p><br/></p>
+
+<h2 id="풀이">풀이</h2>
+
+<ul>
+<li><code>priorityQ</code>는 중요도를 내림차순으로 가지고 있는다</li>
+<li><code>q</code> 리스트를 <code>enumerate()</code>를 사용해 <kbd>(index, 중요도)</kbd>로 구성</li>
+<li><code>q</code> 맨 앞에 있는 <code>q[0]</code>의 중요도가 <code>q</code> 내 가장 큰 중요도(<code>priorityQ[0]</code>)와 같을 때 <code>q</code> 맨 앞에 있는 문서 번호가 문제에서 요구한 정답인지를 비교한다</li>
+<li>정답일 때는 출력을 하고, 정답이 아닐 때는 <code>q</code>, <code>priorityQ</code> 둘 다 <code>pop</code>을 해 원소를 제거한다</li>
+<li><code>q</code> 맨 앞에 있는 원소의 중요도가 문서 내 가장 큰 중요도가 아닐 때는 <code>pop</code>, <code>append</code>로 <code>q</code>의 맨 뒤에 추가한다</li>
+</ul>
+
+<p><br/></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/problem-solving/" rel="tag">Problem Solving</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%ED%81%90/" rel="tag">큐</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/boj/" rel="tag">BOJ</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/boj-1966/" rel="tag">BOJ 1966</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%EB%B0%B1%EC%A4%80-1966/" rel="tag">백준 1966</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/python/" rel="tag">Python</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+			</div>
+			
+		</div>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
