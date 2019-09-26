@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2019 03:14:17 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 01:19:22 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Admin Site</title>
+      <link>https://chunbong.github.io/tags/admin-site/</link>
+      <pubDate>Thu, 26 Sep 2019 01:19:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/admin-site/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Boot</title>
+      <link>https://chunbong.github.io/tags/spring-boot/</link>
+      <pubDate>Thu, 26 Sep 2019 01:19:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/spring-boot/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>BOJ</title>
@@ -147,15 +165,6 @@
     </item>
     
     <item>
-      <title>Admin Site</title>
-      <link>https://chunbong.github.io/tags/admin-site/</link>
-      <pubDate>Fri, 13 Sep 2019 21:13:20 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/tags/admin-site/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>JPA</title>
       <link>https://chunbong.github.io/tags/jpa/</link>
       <pubDate>Fri, 13 Sep 2019 21:13:20 +0900</pubDate>
@@ -170,15 +179,6 @@
       <pubDate>Fri, 13 Sep 2019 21:13:20 +0900</pubDate>
       
       <guid>https://chunbong.github.io/tags/repository/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Boot</title>
-      <link>https://chunbong.github.io/tags/spring-boot/</link>
-      <pubDate>Fri, 13 Sep 2019 21:13:20 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/tags/spring-boot/</guid>
       <description></description>
     </item>
     

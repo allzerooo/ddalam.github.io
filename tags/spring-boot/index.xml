@@ -6,10 +6,22 @@
     <description>Recent content in Spring Boot on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2019 21:13:20 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 01:19:22 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Admin Site 프로젝트</title>
+      <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
+      <pubDate>Thu, 26 Sep 2019 01:19:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-01/</guid>
+      <description>패스트캠퍼스 강의 프로젝트
+ 
+Admin Site  Admin Site 개발을 통해 서비스의 이해, 용어, 환경, 데이터베이스 구성, 비즈니스의 흐름을 파악할 수 있다  
+목표  7개의 테이블이 있는 Admin Site를 개발 사용자가 쇼핑몰에서 아이템을 구매하거나, 관리자가 외부 업체를 관리하는 Admin Site 1000명의 유저와 구매 내역이 5000개가 넘는 데이터를 다룸 Spring Boot를 사용 신규 주문, 신규 유저, 신규 파트너, 신규 상품을 볼 수 있는 대시보드를 제공 고객 관리, 상품 관리, 파트너사 관리, 주문 관리, 카테고리 관리, 어드민 사용자 관리 메뉴를 제공</description>
+    </item>
     
     <item>
       <title>Spring Boot - JPA를 사용한 CRUD 테스트 하기</title>
@@ -65,18 +77,6 @@ POST 요청 - Parameter 처리 HTTP 통신을 할 때 POST 요청은 요청 메�
 컨트롤러는 주소들의 묶음을 모아놓은 것을 말한다
 
 GET 요청 처리 방법 @RestController @RequestMapping(&amp;#34;/api&amp;#34;) public class GetController { @RequestMapping(method = RequestMethod.GET, path = &amp;#34;/getMethod&amp;#34;) public String getRequest() { return &amp;#34;Hi getMethod&amp;#34;; } }  @RestController  spring에게 &amp;ldquo;해당 클래스를 RestController로 사용할거야&amp;rdquo;라고 알려주는 어노테이션  @RequestMapping(&amp;quot;/api&amp;quot;)  API 주소를 매핑하기 위해 사용하는 어노테이션 어떤 주소를 받을 것인지 path를 지정 localhost:8080/api 까지 주소가 매핑된다  @RequestMapping(method = RequestMethod.</description>
-    </item>
-    
-    <item>
-      <title>Admin Site 프로젝트 목표</title>
-      <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
-      <pubDate>Thu, 29 Aug 2019 01:10:22 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-01/</guid>
-      <description>  패스트캠퍼스 강의 내용을 정리
- 
-Admin Site  Admin Site 개발을 통해 서비스의 이해, 용어, 환경, 데이터베이스 구성, 비즈니스의 흐름을 파악할 수 있다  
-목표  7개의 테이블이 있는 Admin Site를 개발 사용자가 쇼핑몰에서 아이템을 구매하거나, 관리자가 외부 업체를 관리하는 Admin Site 1000명의 유저와 구매 내역이 5000개가 넘는 데이터를 다룸 Spring Boot를 사용 신규 주문, 신규 유저, 신규 파트너, 신규 상품을 볼 수 있는 대시보드를 제공 고객 관리, 상품 관리, 파트너사 관리, 주문 관리, 카테고리 관리, 어드민 사용자 관리 메뉴를 제공  </description>
     </item>
     
   </channel>

@@ -6,10 +6,22 @@
     <description>Recent content on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Sep 2019 03:14:17 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 01:19:22 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Admin Site 프로젝트</title>
+      <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
+      <pubDate>Thu, 26 Sep 2019 01:19:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-01/</guid>
+      <description>패스트캠퍼스 강의 프로젝트
+ 
+Admin Site  Admin Site 개발을 통해 서비스의 이해, 용어, 환경, 데이터베이스 구성, 비즈니스의 흐름을 파악할 수 있다  
+목표  7개의 테이블이 있는 Admin Site를 개발 사용자가 쇼핑몰에서 아이템을 구매하거나, 관리자가 외부 업체를 관리하는 Admin Site 1000명의 유저와 구매 내역이 5000개가 넘는 데이터를 다룸 Spring Boot를 사용 신규 주문, 신규 유저, 신규 파트너, 신규 상품을 볼 수 있는 대시보드를 제공 고객 관리, 상품 관리, 파트너사 관리, 주문 관리, 카테고리 관리, 어드민 사용자 관리 메뉴를 제공</description>
+    </item>
     
     <item>
       <title>BOJ_14391 종이 조각</title>
@@ -304,18 +316,6 @@ def prime(n): if n &amp;lt; 2: return False i = 2 while i*i &amp;lt;= n: if n % 
 Servlet 생성, URL Mapping  HttpServlet을 상속하는 HelloSevlet class를 생성 eclipse Servlet 생성 창에서 URL Mappings를 확인할 수 있다 eclipse는 runtime으로 설정된 WAS에 다음과 같은 규칙의 URL로 Servlet을 실행하도록 설정한다
 http://IP주소:PORT/{프로젝트이름}/{URL Mapping 값}   
 Servlet 구현  웹 브라우저가 GET 메서드 방식으로 요청을 보낼 때 Servlet의 doGet() 메서드가 호출된다 @WebServlet : URL Mapping을 위한 어노테이션 HttpServletResponse , HttpServletRequset : 응답, 요청에 필요한 내용들을 모아서 추상화 해놓은 객체 setContentType() : 응답 결과에 대해 브라우저에게 알려주는 내용  브라우저를 확인해보면 Response Headers의 Content-Type 값으로 설정된다  getWriter() : 응답 내용을 넣어줄 통로, PrintWriter 객체를 return  </description>
-    </item>
-    
-    <item>
-      <title>Admin Site 프로젝트 목표</title>
-      <link>https://chunbong.github.io/post/java_web_programming/admin-project-01/</link>
-      <pubDate>Thu, 29 Aug 2019 01:10:22 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/post/java_web_programming/admin-project-01/</guid>
-      <description>  패스트캠퍼스 강의 내용을 정리
- 
-Admin Site  Admin Site 개발을 통해 서비스의 이해, 용어, 환경, 데이터베이스 구성, 비즈니스의 흐름을 파악할 수 있다  
-목표  7개의 테이블이 있는 Admin Site를 개발 사용자가 쇼핑몰에서 아이템을 구매하거나, 관리자가 외부 업체를 관리하는 Admin Site 1000명의 유저와 구매 내역이 5000개가 넘는 데이터를 다룸 Spring Boot를 사용 신규 주문, 신규 유저, 신규 파트너, 신규 상품을 볼 수 있는 대시보드를 제공 고객 관리, 상품 관리, 파트너사 관리, 주문 관리, 카테고리 관리, 어드민 사용자 관리 메뉴를 제공  </description>
     </item>
     
   </channel>
