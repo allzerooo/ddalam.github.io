@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Sep 2019 01:19:22 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 01:22:08 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>https://chunbong.github.io/tags/java/</link>
+      <pubDate>Mon, 11 Nov 2019 01:22:08 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>다형성</title>
+      <link>https://chunbong.github.io/tags/%EB%8B%A4%ED%98%95%EC%84%B1/</link>
+      <pubDate>Mon, 11 Nov 2019 01:22:08 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/tags/%EB%8B%A4%ED%98%95%EC%84%B1/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Admin Site</title>

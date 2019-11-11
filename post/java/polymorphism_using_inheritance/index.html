@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>상속을 이용한 다형성(Polymorphism) - Chunblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Java 다형성 - 상속을 이용한 다형성의 구현">
+	<meta property="og:title" content="상속을 이용한 다형성(Polymorphism)" />
+<meta property="og:description" content="Java 다형성 - 상속을 이용한 다형성의 구현" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chunbong.github.io/post/java/polymorphism_using_inheritance/" />
+<meta property="article:published_time" content="2019-11-11T01:22:08+09:00" />
+<meta property="article:modified_time" content="2019-11-11T01:22:08+09:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Chunblog" rel="home">
+				<div class="logo__title">Chunblog</div>
+				<div class="logo__tagline">Chunbong STUDY LOG</div>
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main single" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">상속을 이용한 다형성(Polymorphism)</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-11-11T01:22:08">November 11, 2019</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/java" rel="category">Java</a></span>
+</div>
+</div>
+		</header><div class="content post__content clearfix">
+			
+
+<blockquote>
+<p>자바의 정석(남궁 성) + 열혈강의 객체 중심 Java(강요천) 내용을 정리</p>
+</blockquote>
+
+<p><br/></p>
+
+<h1 id="다형성이란">다형성이란</h1>
+
+<p>객체지향개념으로는 <strong>여러 가지 형태를 가질 수 있는 능력</strong>을 의미</p>
+
+<ul>
+<li>상속, 인터페이스를 이용해서 다형성을 구현</li>
+</ul>
+
+<p></br></p>
+
+<h1 id="상속을-이용한-다형성">상속을 이용한 다형성</h1>
+
+<p><strong>부모 클래스 타입의 참조변수로 자식 클래스의 인스턴스를 참조</strong> → 하나의 부모 클래스 타입 참조변수로 여러개의 자식 클래스 인스턴스를 참조할 수 있는 유연한 표현이 가능</p>
+
+<p></br></p>
+
+<p><strong>Exmaple 1. 부모 타입으로 배열을 선언</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Toy</span>{ ... }
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Doll</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Toy</span>{ ... }
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyHolder</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Toy</span>{ ... }
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BubbleGum</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Toy</span>{ ... }
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CatchToyMachine</span>{
+  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Toy</span>[] toys;
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CatchToyMachine</span>() {
+    toys <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Toy[10];
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> toys.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+      Toy <span style="color:#a6e22e">toy</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+      <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 0){
+        toy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Doll();
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 1){
+        toy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KeyHolder();
+      } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(i <span style="color:#f92672">%</span> 3 <span style="color:#f92672">==</span> 2){
+        toy <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BubbleGum();
+      }
+      toys[i] <span style="color:#f92672">=</span> toy;
+    }
+  }
+}</code></pre></div>
+<p></br></p>
+
+<p><strong>Exmaple</strong> <strong>2. 부모 타입 파라미터 사용</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToyTest</span>{
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> testToy(Toy <span style="color:#a6e22e">t</span>){ ... }
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String[] <span style="color:#a6e22e">args</span>){
+    ToyTest <span style="color:#a6e22e">test</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ToyTest();
+    Toy <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Toy();
+    test.<span style="color:#a6e22e">testToy</span>(t);
+  }
+}</code></pre></div>
+<p>부모 타입으로 파라미터를 선언할 경우, 부모 클래스를 상속받는 자식 클래스의 객체 어떤 것이든 수용할 수 있다.</p>
+
+<p></br></p>
+
+<h1 id="참조변수의-형변환">참조변수의 형변환</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Tv</span> {
+  <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">power</span>;
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">power</span>(){ ... }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CationTv</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Tv</span> {
+  String <span style="color:#a6e22e">text</span>;
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">caption</span>(){ ... }
+}
+
+Tv <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CationTv();
+t.<span style="color:#a6e22e">caption</span>()  <span style="color:#f92672">//</span> 컴파일에러 <span style="color:#a6e22e">발생</span></code></pre></div>
+<p>컴파일러는 <code>t</code>의 변수 타입을 보고 <code>t</code>가 가리키는 객체가 <code>Tv</code>의 객체일 것으로 판단한다. 따라서 <code>Tv</code> 클래스에 없는 <code>caption()</code>을 호출하므로 컴파일에러가 발생한다. 이런 경우 참조변수의 형변환이 필요하다. (조상의 조상으로도 형변환이 가능하기 때문에 모든 참조변수는 모든 클래스의 조상인 Object 클래스 타입으로 형변환이 가능하다)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">((CaptionTv)t).<span style="color:#a6e22e">caption</span>();</code></pre></div>
+<p></br></p>
+
+<p><strong>Up-casting</strong> : 조상클래스 타입의 참조변수로 자손클래스의 인스턴스를 참조(형변환 생략 가능)</br>
+<strong>Down-casting</strong> : 자손클래스 타입의 참조변수로 부모클래스의 인스턴스를 참조(형변환 생략 불가)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Tv <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> (Tv)<span style="color:#66d9ef">new</span> CationTv() <span style="color:#f92672">//</span>(Tv)는 <span style="color:#a6e22e">생략가능</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 위와 동일한 결과
+</span><span style="color:#75715e"></span>CationTv <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CaptionTv();
+Tv <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> (Tv)c;</code></pre></div>
+<p></br></p>
+
+<p><strong>참조변수의 형변환을 했는데 조상타입의 인스턴스를 자손타입의 참조변수로 참조하게 됐을 때</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span>{
+  Tv <span style="color:#a6e22e">t</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tv();
+  CaptionTv <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+  <span style="color:#75715e">// 참조변수 t가 참조하고 있는 인스턴스를 참조변수 c가 참조하도록
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 이 때 두 참조변수 타입이 다르므로 참조변수 t를 형변환
+</span><span style="color:#75715e"></span>  c <span style="color:#f92672">=</span> (Tv)t;   <span style="color:#75715e">// 실행 시 에러가 발생
+</span><span style="color:#75715e"></span>}</code></pre></div>
+<p>위와 같은 상황을 예방하기 위해 참조변수가 가리키는 인스턴스 타입이 무엇인지 확인하는 것이 중요하다</p>
+
+<p></br></p>
+
+<h1 id="instanceof">instanceof</h1>
+
+<p>형변환을 할 때 참조변수가 가리키는 인스턴스 타입이 무엇인지 확인이 필요하며, 여러 참조변수가 있을 때 각각 가리키는 대상이 어떤 객체인지 모두 기억하기 힘들다. 참조변수가 가리키는 객체의 타입을 확인하기 위해 <kbd>instanceof</kbd> 연산자를 사용할 수 있다. 더 정확히 하면, <kbd>instanceof</kbd> 연산자는 <strong>참조변수가 검사한 타입으로 형변환이 가능한지</strong>를 판단하는 연산자이다. 따라서 아래와 같은 문제가 발생할 수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Tv[] <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tv[3];
+arr[0] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Tv();
+arr[1] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CaptionTv();
+arr[2] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CaptionTv();
+
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> arr.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){
+  <span style="color:#66d9ef">if</span>(arr[i] <span style="color:#a6e22e">instanceof</span> Tv){
+    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;번째는 TV&#34;</span>);
+  }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(arr[i] <span style="color:#a6e22e">instanceof</span> CaptionTv){
+    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;번째는 Caption TV&#34;</span>);
+  }
+}</code></pre></div>
+<pre><code>0번째는 TV
+1번째는 TV
+2번째는 TV
+</code></pre>
+
+<p>이에 대한 대안으로 <code>참조변수.getClass().getName()</code>을 사용할 수 있다.
+</br>
+</br></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/%EB%8B%A4%ED%98%95%EC%84%B1/" rel="tag">다형성</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/java/" rel="tag">Java</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+			</div>
+			
+		</div>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
