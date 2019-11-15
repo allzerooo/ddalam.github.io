@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Nov 2019 01:22:08 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 02:23:04 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IDE 없이 개발하는 방법</title>
+      <link>https://chunbong.github.io/post/java_web_programming/develop_without_ide/</link>
+      <pubDate>Fri, 15 Nov 2019 02:23:04 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/develop_without_ide/</guid>
+      <description>java 파일 1개를 생성, 컴파일, 실행하는 방법  Main.java 파일을 생성 코드 작성
+class Main { public static void main(String[] args) { System.out.println(&amp;#34;Hello World&amp;#34;); } } 컴파일 - Main.class 파일이 생성된다
+javac Main.java 실행
+java Main결과 Hello World   
+package 안에 있는 java 파일을 컴파일, 실행하는 방법 javac kr/co/company/Main.javajava -cp . kr.co.company.Main -cp는 class path의 약자로 클래스를 찾기위한 경로를 말한다. 위 명령은 class path를 현재 디렉토리로 하고, package 아래 실행하고자 하는 class 파일을 지정해준 것이다.</description>
+    </item>
     
     <item>
       <title>상속을 이용한 다형성(Polymorphism)</title>
