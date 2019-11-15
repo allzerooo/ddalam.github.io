@@ -6,20 +6,10 @@
     <description>Recent content on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Nov 2019 02:23:06 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 01:22:08 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>MultiValueMap으로 HTTP request parameter 처리하기</title>
-      <link>https://chunbong.github.io/post/java_web_programming/multivaluemap/</link>
-      <pubDate>Thu, 14 Nov 2019 02:23:06 +0900</pubDate>
-      
-      <guid>https://chunbong.github.io/post/java_web_programming/multivaluemap/</guid>
-      <description>Spring 3.0부터 가능 다중 값을 갖는 맵 확장 인터페이스 동일한 key에 대해 여러 값을 저장 하나의 이름을 가진 여러개의 parameter가 사용될 수 있는 HTTP 요청 parameter를 처리하기에 적절  
-&amp;lt;form action=&amp;#34;/upload&amp;#34; method=&amp;#34;post&amp;#34; enctype=&amp;#34;multipart/form-data&amp;#34;&amp;gt; &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;imgFile&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;imgFile&amp;#34; /&amp;gt; &amp;lt;input type=&amp;#34;file&amp;#34; name=&amp;#34;imgFile&amp;#34; /&amp;gt; &amp;lt;/form&amp;gt;... public class TestContorller { ... public void create(@RequestParam MultiValueMap&amp;lt;String, String&amp;gt; multimap){ ... System.outr.println(multimap); } }</description>
-    </item>
     
     <item>
       <title>상속을 이용한 다형성(Polymorphism)</title>
