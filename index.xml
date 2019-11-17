@@ -6,10 +6,25 @@
     <description>Recent content on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2019 02:23:04 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2019 02:21:22 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>logback 사용 방법</title>
+      <link>https://chunbong.github.io/post/java_web_programming/logback/</link>
+      <pubDate>Sun, 17 Nov 2019 02:21:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/java_web_programming/logback/</guid>
+      <description>logback은 로깅을 위한 라이브러리로 Spring boot에서 기본으로 사용되는 로깅 라이브러리이다.
+
+logback 의존성 추가 만약, Maven 프로젝트라면 maven central에서 logback-classic을 검색해 Apache Maven 탭 안에 있는 코드를 복사한다.
+복사한 내용을 pom.xml 안에 &amp;lt;dependencise&amp;gt; 부분에 붙여넣는다.
+&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; ... &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;ch.qos.logback&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;logback-classic&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.2.3&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; ... &amp;lt;/project&amp;gt; 
+Maven, Gradle과 같은 빌드 도구를 사용하지 않는다면,
+ slf4j-api logback-core logback-classic  3개의 jar 파일을 설치 후 프로젝트의 lib 폴더에 추가한다.</description>
+    </item>
     
     <item>
       <title>IDE 없이 개발하는 방법</title>

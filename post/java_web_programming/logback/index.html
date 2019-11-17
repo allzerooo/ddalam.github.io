@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>logback 사용 방법 - Chunblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="logback 라이브러리의 log level과 log level 설정 방법">
+	<meta property="og:title" content="logback 사용 방법" />
+<meta property="og:description" content="logback 라이브러리의 log level과 log level 설정 방법" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chunbong.github.io/post/java_web_programming/logback/" />
+<meta property="article:published_time" content="2019-11-17T02:21:22+09:00" />
+<meta property="article:modified_time" content="2019-11-17T02:21:22+09:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Chunblog" rel="home">
+				<div class="logo__title">Chunblog</div>
+				<div class="logo__tagline">Chunbong STUDY LOG</div>
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main single" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">logback 사용 방법</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2019-11-17T02:21:22">November 17, 2019</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/java-web-programming" rel="category">Java Web Programming</a></span>
+</div>
+</div>
+		</header><div class="content post__content clearfix">
+			
+
+<p><br/>
+logback은 로깅을 위한 라이브러리로 <kbd>Spring boot</kbd>에서 기본으로 사용되는 로깅 라이브러리이다.</p>
+
+<p><br/></p>
+
+<h1 id="logback-의존성-추가">logback 의존성 추가</h1>
+
+<p>만약, Maven 프로젝트라면 <a href="https://search.maven.org/"><strong>maven central</strong></a>에서 <strong>logback-classic</strong>을 검색해 Apache Maven 탭 안에 있는 코드를 복사한다.</p>
+
+<p><img src="/images/logback_01.png" alt="logback_dependency" /></p>
+
+<p>복사한 내용을 pom.xml 안에 <code>&lt;dependencise&gt;</code> 부분에 붙여넣는다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+  <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+  ...
+  <span style="color:#f92672">&lt;dependencies&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+      <span style="color:#f92672">&lt;groupId&gt;</span>ch.qos.logback<span style="color:#f92672">&lt;/groupId&gt;</span>
+      <span style="color:#f92672">&lt;artifactId&gt;</span>logback-classic<span style="color:#f92672">&lt;/artifactId&gt;</span>
+      <span style="color:#f92672">&lt;version&gt;</span>1.2.3<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+  <span style="color:#f92672">&lt;/dependencies&gt;</span>
+  ...
+<span style="color:#f92672">&lt;/project&gt;</span></code></pre></div>
+<p><br/></p>
+
+<p>Maven, Gradle과 같은 빌드 도구를 사용하지 않는다면,</p>
+
+<ul>
+<li>slf4j-api</li>
+<li>logback-core</li>
+<li>logback-classic</li>
+</ul>
+
+<p>3개의 jar 파일을 설치 후 프로젝트의 lib 폴더에 추가한다.</p>
+
+<p><br/>
+<br/></p>
+
+<h1 id="코드에-logback-적용하기">코드에 logback 적용하기</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> <span style="color:#a6e22e">kr</span>.<span style="color:#a6e22e">co</span>.<span style="color:#a6e22e">company</span>;
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">slf4j</span>.<span style="color:#a6e22e">Logger</span>;
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">slf4j</span>.<span style="color:#a6e22e">LoggerFactory</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">static</span> Logger <span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> LoggerFactory.<span style="color:#a6e22e">getLogger</span>(Main.<span style="color:#a6e22e">class</span>);
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String[] <span style="color:#a6e22e">args</span>) {
+    logger.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>);
+  }
+}</code></pre></div>
+<p><code>LoggerFactory</code>는 실행될 class 타입을 인자로 받는다. log 메시지는 Java의 print문과 같은 형식으로 작성할 수 있기 때문에 변수도 포함 가능하다.</p>
+
+<p><br/></p>
+
+<p>logger는 5개의 method(log level)를 사용할 수 있으며, 각 레벨에 따라 다른 정보를 제공한다.</p>
+
+<ul>
+<li>trace, debug, info, warn, error</li>
+</ul>
+
+<p><img src="/images/logback_02.png" alt="logger_method" /></p>
+
+<p><br/>
+<br/></p>
+
+<h1 id="xml-설정-추가하기">xml 설정 추가하기</h1>
+
+<p>Maven을 사용하면 <strong>src &gt; main &gt; resources</strong> 아래에, 빌드 도구를 사용하지 않는 Java 프로젝트라면 class path root에 logback.xml 파일을 생성해준다. logback.xml은 logback에서 기본으로 요구하는 이름이고, class path root에 있으면 자동으로 logback의 설정으로 이용한다.</p>
+
+<p><a href="http://logback.qos.ch/manual/configuration.html"><strong>logback configuration</strong></a></p>
+
+<p>위 링크에서 <code>&lt;configuration&gt;</code> 코드를 복사해서 logback.xml에 추가해준다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
+  <span style="color:#f92672">&lt;appender</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;STDOUT&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;encoder&gt;</span>
+      <span style="color:#f92672">&lt;pattern&gt;</span>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n<span style="color:#f92672">&lt;/pattern&gt;</span>
+    <span style="color:#f92672">&lt;/encoder&gt;</span>
+  <span style="color:#f92672">&lt;/appender&gt;</span>
+
+  <span style="color:#f92672">&lt;root</span> <span style="color:#a6e22e">level=</span><span style="color:#e6db74">&#34;debug&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;appender-ref</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;STDOUT&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/root&gt;</span>
+<span style="color:#f92672">&lt;/configuration&gt;</span></code></pre></div>
+<p>log level을 변경할 때는 <code>&lt;root level=&quot;&quot;&gt;</code> 부분을 trace, debug, info, warn, error 중 원하는 log level로 설정해준다. console에 출력되는 log 메시지의 형식을 바꾸고 싶을 때는 <code>&lt;pattern&gt;</code> 내부 문자열을 바꿔주면 된다.</p>
+
+<p><br/>
+<br/></p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/logback/" rel="tag">logback</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+			</div>
+			
+		</div>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
