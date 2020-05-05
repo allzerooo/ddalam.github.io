@@ -6,10 +6,21 @@
     <description>Recent content in JPA on Chunblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2019 21:13:20 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2020 16:48:22 +0900</lastBuildDate>
     
 	<atom:link href="https://chunbong.github.io/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Boot &#43; Multiple Schema</title>
+      <link>https://chunbong.github.io/post/jpa/spring_boot&#43;multiple_schema/</link>
+      <pubDate>Tue, 05 May 2020 16:48:22 +0900</pubDate>
+      
+      <guid>https://chunbong.github.io/post/jpa/spring_boot&#43;multiple_schema/</guid>
+      <description>문제 한 프로젝트에서 여러 스키마를 사용해야 되는 경우가 있습니다. 하나의 스키마를 사용할 때는 datasource 설정 시 url에 사용할 스키마를 명시하는데, 여러 스키마를 사용할 때는 특정 스키마만을 명시하기 어렵습니다. 따라서, application.yml의 datasource 부분은 아래와 같이 설정했습니다.
+spring: ... datasource: driver-class-name: org.mariadb.jdbc.Driver url: &amp;#39;jdbc:mariadb://AWS-RDS-END-URL:PORT/?useUnicode=true&amp;amp;allowMultiQueries=true&amp;#39; username: USER_NAME password: PASSWORD ... 
+datasource의 url 속성에서 PORT/ 뒤에 프로젝트에서 사용할 스키마를 명시하지 않으면 엔티티 매핑 시 @Table 어노테이션의 schema 속성을 사용해도 데이터베이스의 특정 스키마와 매핑할 수 없습니다.</description>
+    </item>
     
     <item>
       <title>Spring Boot - JPA를 사용한 CRUD 테스트 하기</title>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Spring Boot &#43; Multiple Schema - Chunblog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Multiple Schema 적용하기">
+	<meta property="og:title" content="Spring Boot &#43; Multiple Schema" />
+<meta property="og:description" content="Multiple Schema 적용하기" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chunbong.github.io/post/jpa/spring_boot&#43;multiple_schema/" />
+<meta property="article:published_time" content="2020-05-05T16:48:22+09:00" />
+<meta property="article:modified_time" content="2020-05-05T16:48:22+09:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="Chunblog" rel="home">
+				<div class="logo__title">Chunblog</div>
+				<div class="logo__tagline">Chunbong STUDY LOG</div>
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main single" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Spring Boot &#43; Multiple Schema</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
+	<time class="meta__text" datetime="2020-05-05T16:48:22">May 05, 2020</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/jpa" rel="category">JPA</a></span>
+</div>
+</div>
+		</header><div class="content post__content clearfix">
+			
+
+<h3 id="문제">문제</h3>
+
+<p>한 프로젝트에서 여러 스키마를 사용해야 되는 경우가 있습니다. 하나의 스키마를 사용할 때는 datasource 설정 시 url에 사용할 스키마를 명시하는데, 여러 스키마를 사용할 때는 특정 스키마만을 명시하기 어렵습니다.
+따라서, application.yml의 datasource 부분은 아래와 같이 설정했습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">spring:
+  ...
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: <span style="color:#e6db74">&#39;jdbc:mariadb://AWS-RDS-END-URL:PORT/?useUnicode=true&amp;allowMultiQueries=true&#39;</span>
+    username: USER_NAME
+    password: PASSWORD
+  ...</code></pre></div>
+<p><br/></p>
+
+<p>datasource의 url 속성에서 <code>PORT/</code> 뒤에 프로젝트에서 사용할 스키마를 명시하지 않으면 엔티티 매핑 시 <code>@Table</code> 어노테이션의 <code>schema</code> 속성을 사용해도 데이터베이스의 특정 스키마와 매핑할 수 없습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Table</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;User&#34;</span>, schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Shop&#34;</span>)
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">class</span> User { ... }</code></pre></div>
+<p>위와 같이 Shop 스키마의 User 테이블을 매핑하려고 하면 <code>java.sql.SQLException: No database selected</code> 에러가 발생합니다.</p>
+
+<p><br/></p>
+
+<h3 id="해결-방법">해결 방법</h3>
+
+<p>저는 domain 디렉토리 아래 스키마에 해당하는 디렉토리를 생성하고, 각 스키마 디렉토리 마다 datasource config 파일을 추가, 각 스키마에 포함된 테이블은 해당 디렉토리 아래에서 매핑하는 방법을 사용했습니다.</p>
+
+<p><center><img src="https://user-images.githubusercontent.com/7088950/81043342-09247900-8eed-11ea-9f8b-b7a0e114dd1a.png" width="300"></center></p>
+
+<p><br/></p>
+
+<p>여러 개의 스키마를 사용하려면 우선 application.yml에 datasource를 추가해야 합니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">spring: ...
+
+schema1:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: <span style="color:#e6db74">&#34;jdbc:mariadb://AWS-RDS-END-URL:PORT/Schema1?useUnicode=true&amp;allowMultiQueries=true&#34;</span>
+    username: USER_NAME
+    password: PASSWORD
+
+schema2:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: <span style="color:#e6db74">&#34;jdbc:mariadb://AWS-RDS-END-URL:PORT/Schema2?useUnicode=true&amp;allowMultiQueries=true&#34;</span>
+    username: USER_NAME
+    password: PASSWORD</code></pre></div>
+<p><code>schema1</code>, <code>schema2</code>는 원하는 이름으로 지정하고, url 속성의 <code>PORT/</code> 뒤에 사용할 스키마를 명시해 줍니다. 저는 예를 들기 위해 편의상 schema1, schema2를 사용했습니다. 실무에서는 사용할 schema 명과 모두 일치시켰습니다.</p>
+
+<p><br/></p>
+
+<p>이제 각 스키마를 사용할 디렉토리 밑에 config 파일을 추가합니다. 저는 domain/schema1/Schema1DataSourceConfig 와 같이 만들었습니다. 그리고 config 파일에 repository의 <code>basePackages</code> 경로를 지정해줘야 되기 때문에 각 스키마 디렉토리 아래 JPA repository를 위한 디렉토리를 추가해주세요.</p>
+
+<p><br/></p>
+
+<p>Schema1DataSourceConfig 파일은 아래와 같습니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#a6e22e">@EnableTransactionManagement</span>
+<span style="color:#a6e22e">@EnableJpaRepositories</span>(
+    entityManagerFactoryRef <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1EntityManagerFactory&#34;</span>,
+    <span style="color:#75715e">// PATH에는 domain에 이르는 path를 적어주세요. 생략을 위해 PATH라고 적었습니다.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 저는 schema1 디렉토리 아래에 &#34;repository&#34;라는 이름으로 repository 디렉토리를 추가해줬습니다.
+</span><span style="color:#75715e"></span>    basePackages <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;PATH.domain.schema1.repository&#34;</span>})
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">class</span> Doctalk2016DataSourceConfig {
+
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Environment</span> env;
+
+    <span style="color:#a6e22e">@Primary</span>
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1DataSource&#34;</span>)
+    <span style="color:#a6e22e">@ConfigurationProperties</span>(prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1.datasource&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DataSource</span> schema1DataSource() {
+        DriverManagerDataSource <span style="color:#a6e22e">dataSource</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DriverManagerDataSource();
+        dataSource.<span style="color:#a6e22e">setDriverClassName</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema1.datasource.driver-class-name&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setUrl</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema1.datasource.url&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setUsername</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema1.datasource.username&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setPassword</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema1.datasource.password&#34;</span>));
+        <span style="color:#66d9ef">return</span> dataSource;
+    }
+
+    <span style="color:#a6e22e">@Primary</span>
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1EntityManagerFactory&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">LocalContainerEntityManagerFactoryBean</span> schema1EntityManagerFactory(
+            EntityManagerFactoryBuilder <span style="color:#a6e22e">builder</span>, <span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema1DataSource&#34;</span>) DataSource <span style="color:#a6e22e">schema1DataSource</span>) {
+        <span style="color:#66d9ef">return</span> builder
+                .<span style="color:#a6e22e">dataSource</span>(schema1DataSource)
+                .<span style="color:#a6e22e">packages</span>(<span style="color:#e6db74">&#34;PATH.domain&#34;</span>)    <span style="color:#75715e">// PATH에는 domain에 이르는 path를 적어주세요
+</span><span style="color:#75715e"></span>                .<span style="color:#a6e22e">persistenceUnit</span>(<span style="color:#e6db74">&#34;schema1&#34;</span>)
+                .<span style="color:#a6e22e">build</span>();
+    }
+
+    <span style="color:#a6e22e">@Primary</span>
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1TransactionManager&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">PlatformTransactionManager</span> schema1TransactionManager(
+            <span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema1EntityManagerFactory&#34;</span>) EntityManagerFactory <span style="color:#a6e22e">schema1EntityManagerFactory</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> JpaTransactionManager(schema1EntityManagerFactory);
+    }
+
+}</code></pre></div>
+<p><br/></p>
+
+<p>Schema2DataSourceConfig 파일은 아래와 같습니다. Schema1DataSourceConfig 파일과 다른 점은 <code>@Primary</code> 어노테이션의 여부 입니다. default로 사용할 스키마에 <code>@Primary</code>를 적용해 주세요.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#a6e22e">@EnableTransactionManagement</span>
+<span style="color:#a6e22e">@EnableJpaRepositories</span>(
+        entityManagerFactoryRef <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema2EntityManagerFactory&#34;</span>,
+        <span style="color:#75715e">// PATH에는 domain에 이르는 path를 적어주세요
+</span><span style="color:#75715e"></span>        basePackages <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;PATH.domain.schema2.repository&#34;</span>})
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">class</span> Doctalk2016DataSourceConfig {
+
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Environment</span> env;
+
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema2DataSource&#34;</span>)
+    <span style="color:#a6e22e">@ConfigurationProperties</span>(prefix <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema2.datasource&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DataSource</span> schema2DataSource() {
+        DriverManagerDataSource <span style="color:#a6e22e">dataSource</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DriverManagerDataSource();
+        dataSource.<span style="color:#a6e22e">setDriverClassName</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema2.datasource.driver-class-name&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setUrl</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema2.datasource.url&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setUsername</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema2.datasource.username&#34;</span>));
+        dataSource.<span style="color:#a6e22e">setPassword</span>(env.<span style="color:#a6e22e">getProperty</span>(<span style="color:#e6db74">&#34;schema2.datasource.password&#34;</span>));
+        <span style="color:#66d9ef">return</span> dataSource;
+    }
+
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema2EntityManagerFactory&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">LocalContainerEntityManagerFactoryBean</span> schema2EntityManagerFactory(
+            EntityManagerFactoryBuilder <span style="color:#a6e22e">builder</span>, <span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema2DataSource&#34;</span>) DataSource <span style="color:#a6e22e">schema2DataSource</span>) {
+        <span style="color:#66d9ef">return</span> builder
+                .<span style="color:#a6e22e">dataSource</span>(schema2DataSource)
+                .<span style="color:#a6e22e">packages</span>(<span style="color:#e6db74">&#34;PATH.domain&#34;</span>)    <span style="color:#75715e">// PATH에는 domain에 이르는 path를 적어주세요
+</span><span style="color:#75715e"></span>                .<span style="color:#a6e22e">persistenceUnit</span>(<span style="color:#e6db74">&#34;schema2&#34;</span>)
+                .<span style="color:#a6e22e">build</span>();
+    }
+
+    <span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema2TransactionManager&#34;</span>)
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">PlatformTransactionManager</span> schema2TransactionManager(
+            <span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema2EntityManagerFactory&#34;</span>) EntityManagerFactory <span style="color:#a6e22e">schema2EntityManagerFactory</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> JpaTransactionManager(schema2EntityManagerFactory);
+    }
+
+}</code></pre></div>
+<p><br/></p>
+
+<p>마지막으로, repository 구현 시 주의해야 할 점이 있습니다. <code>EntityManager</code>를 선언할 때 어떤 <code>EntityManagerFactory</code>를 사용할 것인지 명시해줘야 합니다. 아래 코드 중 Table1RepositoryImpl의 생성자에서 <code>@Qualifier(&quot;schema1EntityManagerFactory&quot;)</code>를 사용해 <code>EntityManagerFactory</code>를 명시해 줬습니다. <code>@Qualifier</code>에 들어가는 값은 Schema1DataSourceConfig에서 사용한 Bean name과 일치해야 됩니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Primary</span>
+<span style="color:#a6e22e">@Bean</span>(name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;schema1EntityManagerFactory&#34;</span>)
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">LocalContainerEntityManagerFactoryBean</span> schema1EntityManagerFactory(
+        EntityManagerFactoryBuilder <span style="color:#a6e22e">builder</span>, <span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema1DataSource&#34;</span>) DataSource <span style="color:#a6e22e">schema1DataSource</span>) {
+    <span style="color:#66d9ef">return</span> builder
+            .<span style="color:#a6e22e">dataSource</span>(schema1DataSource)
+            .<span style="color:#a6e22e">packages</span>(<span style="color:#e6db74">&#34;PATH.domain&#34;</span>)
+            .<span style="color:#a6e22e">persistenceUnit</span>(<span style="color:#e6db74">&#34;schema1&#34;</span>)
+            .<span style="color:#a6e22e">build</span>();
+}</code></pre></div>
+<p><br/></p>
+
+<p>저는 querydsl을 사용했고, schema1/repository 디렉토리 아래 Table1Repository, Table1RepositoryCustom, Table1RepositoryImpl과 같이 파일을 나누어 개발했습니다. schema2에 포함된 테이블을 다룰 때도 동일한 방법을 적용하면 됩니다.</p>
+
+<p><br/></p>
+
+<p>repository 디렉토리 아래 있는 파일들의 예 입니다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Repository</span>
+<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">interface</span> Table1Repository <span style="color:#a6e22e">extends</span> JpaRepository<span style="color:#f92672">&lt;</span>Table1, Integer<span style="color:#f92672">&gt;</span>, Table1RepositoryCustom {
+	...
+}</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">interface</span> Table1RepositoryCustom {
+
+    List<span style="color:#f92672">&lt;</span>UserDto<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">retrieveUser</span>();
+
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">tagList</span>(String <span style="color:#a6e22e">postId</span>);
+
+    Integer <span style="color:#a6e22e">test</span>();
+
+	...
+}</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">class</span> Table1RepositoryImpl <span style="color:#a6e22e">implements</span> Table1RepositoryCustom {
+
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">final</span> JPAQueryFactory <span style="color:#a6e22e">queryFactory</span>;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Table1RepositoryImpl</span>(<span style="color:#a6e22e">@Qualifier</span>(<span style="color:#e6db74">&#34;schema1EntityManagerFactory&#34;</span>) EntityManager <span style="color:#a6e22e">em</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queryFactory</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JPAQueryFactory(em);
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">&lt;</span>UserDto<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">retrieveUser</span>() {
+        <span style="color:#960050;background-color:#1e0010">…</span>
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">List</span><span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">tagList</span>(String <span style="color:#a6e22e">postId</span>) {
+        <span style="color:#960050;background-color:#1e0010">…</span>
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Integer</span> test() {
+        <span style="color:#960050;background-color:#1e0010">…</span>
+    }
+
+}</code></pre></div>
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/spring-boot/" rel="tag">Spring Boot</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/jpa/" rel="tag">JPA</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/multiple-schema/" rel="tag">Multiple Schema</a></li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+			</div>
+			
+		</div>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
