@@ -1,0 +1,6 @@
+[
+    {
+        "question": "ㅁㄴㄴㅁ.",
+        "answer": "접근한정자의 종류는 open, public, internal, fileprivate, private\nopen은 가장 열려있는 접근 한정자이고 전체적으로는 public과 유사하지만\n타모듈에서 만들어진 class의 접근한정자가 open 이면 상속을 할수 있다.\n타모듈에서 만들어진 method의 접근한정자가 open이면 override를 할수 있다.\n같은 모듈에서는 public이나 internal과 동일하다.\n\npublic는 다른 모듈의 public 로 된 클래스를 상속할려고 하면 Cannot inherit from non-open class '' outside of its defining module 이란 class가 open 되지 않았다는 에러가 나온다.\n다른 모듈의 public로 된 메서드를 override 하려고 하면 Overriding non-open instance method outside of its defining module 이란 method가 open되지 않았다는 에러가 나온다.\n\ninternal은 타 모듈에서 internal 접근한정자로 만들어진 클래스를 코드에서는 가져올 수 없지만 storyboard, xib에서는 가져올 수 있다. 접근한정자를 지정하지 않았을 때 기본적으로 사용 되는 접근 수준이고 같은 모듈 에서는 자유롭게 사용 가능하다.\n\nfileprivate은 클래스는 같은 파일 내에서만 접근 가능하고 메서드도 같은 파일 내에서만 접근 가능하다.\n\nprivate은 클래스는 같은 파일 내에서만 접근 가능하고 메서드는 같은 블록(클래스) 내에서만 접근 가능하다.\n같은 파일에서는 이렇게 extension 안에서도 class, struct, enum등 같은 영역에서는 접근 가능하다.\n\n접근한정자 뒤에 set을 붙여도 된다.\nset을 붙인다는 것은 name이나 age, gender를 접근할때는 internal수준으로 어디서든지 접근할수 있지만 set할때는 접근한정자를 따른다.\n타 모듈에서 set할 때는 접근한정자를 따르고 클라이언트는 get만 쓸 수 있게 하고 싶을때는 public private(set) 과 같이 쓸 수 있다."
+    }
+]

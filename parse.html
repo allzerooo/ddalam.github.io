@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>Parse</title>
+        <style>
+            html, body {
+                margin: 0px;
+                padding: 0px;
+                font-size: 17px;
+                background-color: white;
+                color: black;
+            }
+
+            #header {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 102px;
+                background-color: white;
+            }
+
+            .align {
+                margin-top: 30px;
+                padding: 0px;
+                width: calc(50% - 10px);
+                height: 52px;
+                outline: none;
+                color: white;
+                border: 0px solid transparent;
+                display: block;
+                float: left;
+                cursor: pointer;
+            }
+
+            #display {
+                margin-left: 10px;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                background-color: #3d6a66;
+            }
+
+            #json {
+                margin-left: 0px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                background-color: #252b31;
+            }
+
+            #textarea {
+                margin-top: 102px;
+                margin-left: 10px;
+                width: calc(100% - 20px);
+                resize: none;
+                min-height: 24px;
+                font-size: 17px;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid #12ac00;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <button id="display" class="align">display 정렬</button>
+            <button id="json" class="align">json 정렬</button>
+        </div>        
+        <textarea id="textarea" placeholder="텍스트 입력" onkeydown="resizeKeydown(this)" onkeyup="resizeKeyup(this)"></textarea>
+        <script>
+            document.getElementById('textarea').style.height = '28px';
+            function resizeKeydown(obj) {
+                resizeKeyup(obj);
+                setTimeout(function() {
+                    resizeKeyup(obj);
+                }, 6);
+                setTimeout(function() {
+                    resizeKeyup(obj);
+                }, 10);
+            }
+            function resizeKeyup(obj) {
+                obj.style.height = '1px';
+                obj.style.height = obj.scrollHeight + 'px';
+            }
+
+            document.getElementById('display').addEventListener('click', function(e) {
+                const text = document.getElementById('textarea').value;
+                const replace = text.replace(/\\n/gi, '\n');
+                document.getElementById('textarea').value = replace;
+                resizeKeyup(document.getElementById('textarea'));
+            });
+            document.getElementById('json').addEventListener('click', function(e) {
+                const text = document.getElementById('textarea').value;
+                const replace = text.replace(/\n/gi, '\\n');
+                document.getElementById('textarea').value = replace;
+                resizeKeyup(document.getElementById('textarea'));
+            });
+        </script>
+    </body>
+</html>
